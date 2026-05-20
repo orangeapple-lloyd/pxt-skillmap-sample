@@ -1,12 +1,13 @@
-# test
+# zhtest
 * name: 中文翻譯測試地圖
 * description: 用來驗證 MakeCode 是否能載入 fork 後的繁體中文內容。
 
-## test-path
+## zhtest-path
 * name: 中文測試路徑
 * description: 點下方卡片進入 tutorial 確認是否顯示中文。
+* completionUrl: https://orangeapple-lloyd.github.io/pxt-skillmap-sample/certificates/understanding-arcade-tutorials.pdf
 
-### test-activity1
+### zhtest-activity1
 
 * name: 中文載入測試
 * type: tutorial
