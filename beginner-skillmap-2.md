@@ -1,21 +1,21 @@
 # Beginner Arcade
-* name: Beginner's Guide to Arcade Games
-* description: Learn to create arcade games of your own by completing these tutorials.
+* name: Arcade 遊戲入門指南
+* description: 完成這些教學，學會自己製作 Arcade 遊戲。
 * infoUrl: /skillmap/educator-info/basic-map-info
 
 
 
 ## Learn to Use Tutorial
-* name: Learn to Use MakeCode Arcade
-* description: Start here if you want to know the ins and outs of Arcade tutorials!
+* name: 學會使用 MakeCode Arcade
+* description: 想了解 Arcade 教學的所有細節嗎?從這裡開始!
 * completionUrl: /skillmap/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
-* name: Get to Know MakeCode Arcade
+* name: 認識 MakeCode Arcade
 * type: tutorial
-* description: Intro to the features and vocabulary used in Arcade tutorials.
-* tags: easy
+* description: 介紹 Arcade 教學中會用到的功能與詞彙。
+* tags: 入門
 
 * url: /skillmap/interface/activity1 
 * imageUrl: /static/skillmap/interface/activity1.png
@@ -23,19 +23,18 @@
 
 
 
-
 ## Quick Example Games
-* name: Quick-Start Games
-* description:  Build your first games in less than 30 minutes!
+* name: 快速上手遊戲
+* description: 30 分鐘內完成你的第一款遊戲!
 * completionUrl: /static/skillmap/certificates/getting-started.pdf
 
 
 ### story-activity1
 
-* name: Greeting Card
+* name: 賀卡
 * type: tutorial
-* description: Make an amazing greeting card in minutes!
-* tags: easy, story, card, creative
+* description: 幾分鐘內做出一張超棒的賀卡!
+* tags: 入門, 故事, 卡片, 創意
 * next: clicker-activity1
 
 * url: /skillmap/story/story1 
@@ -44,10 +43,10 @@
 
 ### clicker-activity1
 
-* name: Clicker Game
+* name: 點擊遊戲
 * type: tutorial
-* description: Make a simple clicker game in MakeCode Arcade!
-* tags: easy, clicker, game
+* description: 在 MakeCode Arcade 中做出一款簡單的點擊遊戲!
+* tags: 入門, 點擊, 遊戲
 * next: collector-activity1
 
 * url: /skillmap/clicker/clicker1 
@@ -56,10 +55,10 @@
 
 ### collector-activity1
 
-* name: Collector Game
+* name: 收集遊戲
 * type: tutorial
-* description: Make an arcade-style collector game!
-* tags: easy, collector, game
+* description: 做出一款 Arcade 風格的收集遊戲!
+* tags: 入門, 收集, 遊戲
 * next: puzzle-activity1
 
 * url: /skillmap/collector/collector1 
@@ -68,10 +67,10 @@
 
 ### puzzle-activity1
 
-* name: Quick Puzzle
+* name: 快速猜謎
 * type: tutorial
-* description: Make a puzzle game and test your luck!
-* tags: easy, puzzle, game
+* description: 做一款猜謎遊戲,測試你的運氣!
+* tags: 入門, 猜謎, 遊戲
 
 * url: /skillmap/puzzle/puzzle1 
 * imageUrl: /static/skillmap/puzzle/puzzle-activity1.png
@@ -79,18 +78,18 @@
 
 
 ## story
-* name: Tell Stories Using Arcade
-* description: Learn to tell engaging short stories using Microsoft MakeCode Arcade.
+* name: 用 Arcade 說故事
+* description: 學會用 Microsoft MakeCode Arcade 講出引人入勝的短篇故事。
 * completionUrl: /static/skillmap/certificates/writing-stories.pdf
 
 
 
 ### story-activity2
 
-* name: Bigger Greeting
+* name: 進階賀卡
 * type: tutorial
-* description: Add to your greeting card for a gift that keeps on giving!
-* tags: easy, card, gift, creative
+* description: 為你的賀卡加上更多內容,變成讓人念念不忘的禮物!
+* tags: 入門, 卡片, 禮物, 創意
 * next: story-activity3
 * reqired: 1 story
 
@@ -99,10 +98,10 @@
 
 ### story-activity3
 
-* name: Joking Around
+* name: 講個笑話
 * type: tutorial
-* description: Create your first Arcade story using a two-line joke!
-* tags: easy, story, joke, creative
+* description: 用一個兩句話的笑話寫出你的第一個 Arcade 故事!
+* tags: 入門, 故事, 笑話, 創意
 * next: story-activity4
 
 * url: /skillmap/story/story3 
@@ -111,10 +110,10 @@
 
 ### story-activity4
 
-* name: Shortest Story
+* name: 最短故事
 * type: tutorial
-* description: Write a short story with a scene of your own!
-* tags: easy, story, joke, creative
+* description: 用你自己創造的場景寫一個短篇故事!
+* tags: 入門, 故事, 笑話, 創意
 
 * url: /skillmap/story/story4 
 * imageUrl: /static/skillmap/story/story-activity4.png
@@ -124,17 +123,17 @@
 
 
 ## clicker
-* name: Make a Clicker! 
-* description: Build and embellish a clicker game in MakeCode Arcade.
+* name: 做一款點擊遊戲! 
+* description: 在 MakeCode Arcade 中建立並美化一款點擊遊戲。
 * completionUrl: /static/skillmap/certificates/clicker-game.pdf
 
 
 ### clicker-activity2
 
-* name: Grand Clicker
+* name: 華麗點擊器
 * type: tutorial
-* description: Modify your clicker so that it's unmistakably yours! 
-* tags: easy, clicker, game
+* description: 改造你的點擊遊戲,讓它一看就是你的風格! 
+* tags: 入門, 點擊, 遊戲
 * next: clicker-activity3
 * required: 1 clicker
 
@@ -144,10 +143,10 @@
 
 ### clicker-activity3
 
-* name: Super Clicker
+* name: 超級點擊器
 * type: tutorial
-* description: Add code to make your simple clicker more powerful!
-* tags: easy, clicker, game
+* description: 加入新程式,讓你的簡單點擊器更強大!
+* tags: 入門, 點擊, 遊戲
 * next: clicker-activity4
 
 * url: /skillmap/clicker/clicker3 
@@ -156,10 +155,10 @@
 
 ### clicker-activity4
 
-* name: Clicker Store
+* name: 點擊商店
 * type: tutorial
-* description: Make a simple store that lets players buy more power! 
-* tags: easy, clicker, game
+* description: 做一個簡單商店,讓玩家可以購買更強的能力! 
+* tags: 入門, 點擊, 遊戲
 * next: clicker-activity5
 
 * url: /skillmap/clicker/clicker4 
@@ -169,10 +168,10 @@
 
 ### clicker-activity5
 
-* name: Bigger Clicker
+* name: 進階點擊器
 * type: tutorial
-* description: Make a simple store that lets players buy more power! 
-* tags: intermediate, clicker, game, sandbox
+* description: 做一個簡單商店,讓玩家可以購買更強的能力! 
+* tags: 中階, 點擊, 遊戲, 自由發揮
 
 
 * url: /skillmap/clicker/clicker5 
@@ -184,18 +183,18 @@
 
 
 ## Collector
-* name: Collector Game
-* description: Build a simple collector game in MakeCode Arcade!
+* name: 收集遊戲
+* description: 在 MakeCode Arcade 中做出一款簡單的收集遊戲!
 * completionUrl: /static/skillmap/certificates/collector-game.pdf
 
 
 
 ### collector-activity2
 
-* name: Collect the Fun
+* name: 收集樂趣加倍
 * type: tutorial
-* description: Make a few simple changes for a game that's twice as fun! 
-* tags: easy, collector, game
+* description: 做幾個簡單的小改動,讓遊戲樂趣加倍! 
+* tags: 入門, 收集, 遊戲
 * required: 1 collector
 * next: collector-activity3
 
@@ -207,10 +206,10 @@
 
 ### collector-activity3
 
-* name: Experience Danger
+* name: 體驗危險
 * type: tutorial
-* description: Learn to add enemy projectiles to your game!
-* tags: easy, collector, game
+* description: 學會在遊戲中加入敵人發射的子彈!
+* tags: 入門, 收集, 遊戲
 * next: collector-activity4
 
 
@@ -222,10 +221,10 @@
 
 ### collector-activity4
 
-* name: Give it Life
+* name: 增添生命
 * type: tutorial
-* description: Add extra lives to your collector game!
-* tags: easy, collector, game
+* description: 為你的收集遊戲加入額外的生命值!
+* tags: 入門, 收集, 遊戲
 * next: collector-activity5
 
 
@@ -236,10 +235,10 @@
 
 ### collector-activity5
 
-* name: Go for Gusto
+* name: 大顯身手
 * type: tutorial
-* description: Make your game super special by doing your own thing!
-* tags: intermediate, collector, game, sandbox
+* description: 自由發揮,讓你的遊戲變得獨一無二!
+* tags: 中階, 收集, 遊戲, 自由發揮
 
 
 * url: /skillmap/collector/collector5
@@ -250,18 +249,18 @@
 
 
 ## Puzzle
-* name: Puzzle Game
-* description: Build a guess-the-number game!
+* name: 猜謎遊戲
+* description: 做一款猜數字遊戲!
 * completionUrl: /static/skillmap/certificates/puzzle-game.pdf
 
 
 
 ### puzzle-activity2
 
-* name: Puzzling Answers
+* name: 揭曉謎底
 * type: tutorial
-* description: Reveal the magic answer when the game is over! 
-* tags: easy, puzzle, game
+* description: 遊戲結束時揭曉神奇答案! 
+* tags: 入門, 猜謎, 遊戲
 * required: 1 puzzle
 * next: puzzle-activity3
 
@@ -273,10 +272,10 @@
 
 ### puzzle-activity3
 
-* name: Guess Again
+* name: 再猜一次
 * type: tutorial
-* description: Add multiple chances to guess correctly! 
-* tags: easy, puzzle, game
+* description: 給玩家多次猜對的機會! 
+* tags: 入門, 猜謎, 遊戲
 * next: puzzle-activity4
 
 
@@ -287,10 +286,10 @@
 
 ### puzzle-activity4
 
-* name: Getting Warmer
+* name: 越來越熱
 * type: tutorial
-* description: Let the player know if their guesses are high or low! 
-* tags: intermediate, puzzle, game
+* description: 提示玩家猜的數字偏大還是偏小! 
+* tags: 中階, 猜謎, 遊戲
 * next: puzzle-activity5
 
 * url: /skillmap/puzzle/puzzle5
@@ -300,10 +299,10 @@
 
 ### puzzle-activity5
 
-* name: Take Over
+* name: 自由發揮
 * type: tutorial
-* description: Get creative with your guessing game! 
-* tags: intermediate, puzzle, game, sandbox
+* description: 發揮創意,打造屬於你的猜謎遊戲! 
+* tags: 中階, 猜謎, 遊戲, 自由發揮
 
 
 * url: /skillmap/puzzle/puzzle5

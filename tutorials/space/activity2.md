@@ -1,4 +1,4 @@
-# Projectiles
+# 發射子彈
 
 
 ```template
@@ -42,54 +42,48 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 
 
 
-## Introduction @unplugged
+## 簡介 @unplugged
 
-![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
+![發射子彈](/static/skillmap/space/projectiles.gif "嘿,敵方太空船,要不要借顆小行星玩玩?")
 
-Are you ready to customize your ship? 
+準備好把你的太空船改造成自己喜歡的樣子了嗎?
 
-In this tutorial, you'll learn to fire a projectile when the **Ⓐ** button
-is pressed and also how to add special effects.
+在這份教學中,你會學到怎麼在按下 **Ⓐ** 按鈕時發射子彈,還會學到如何加上特效。
 
 
-## Customize sprites
+## 自訂角色
 
-The workspace is pre-loaded with code for a flying ship.  
-Be sure to 
-**play with it in the simulator** to see if it works like you expect.
+工作區裡已經預載一架會飛的太空船程式。  
+記得在**模擬器裡實際玩玩看**,確認它的動作符合你的預期。
 
 ---
 
-🔲  Check your player [__*sprite*__](#sprote "2-D image that moves on the screen") 
-and to make sure you're happy with it. 
+🔲  檢查你的玩家[__*角色*__](#sprote "在螢幕上移動的 2D 圖像"),確認你對它的樣子滿意。
 
-🔲  If you want to make changes, click the sprite inside the block and design a new 
-kind of vehicle OR turn it into an alien creature using the sprite editor! 👽
+🔲  如果想要修改,點擊積木裡的角色圖片,重新設計一台新的載具,或者用角色編輯器把它變成外星生物!👽
 
 
 
-## Add a button event
+## 加入按鈕事件
 
-**Time for action!**
+**動手時間到!**
 
-Let's launch projectiles when the **Ⓐ** button is pressed!
+讓我們在按下 **Ⓐ** 按鈕時發射子彈吧!
 
 ---
 
-🔲 Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
+🔲 把 ``||controller:on [A] button pressed ||`` 容器拖到工作區。
 
-🔲 Snap a   
+🔲 把  
 ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` 
-block inside of the new container.
+積木接到剛才那個新容器裡面。
 
-🔲 Click the grey box inside of the new projectile block to draw your 
-flying object (or select one from the **My Assets** tab.)
+🔲 點擊新子彈積木中的灰色方框,畫出你的飛行物體(或從 **My Assets** 分頁中挑一個)。
 
 ---
 
 
-**Tip:** Run your code in the simulator and launch a few projectiles 
-by pressing the **Ⓐ** button.  What happens?
+**小提示:** 在模擬器中執行你的程式,按 **Ⓐ** 按鈕發射幾發子彈。發生了什麼事呢?
 
 
 ```blocks
@@ -108,41 +102,34 @@ let projectile = sprites.createProjectileFromSprite(img`
 })
 ```
 
-## Retrospect @unplugged
+## 回頭看看 @unplugged
 
-You probably noticed that your projectiles are firing toward the bottom 
-right corner. This is *not helpful* when your enemies are coming from above! Let's take 
-a second to figure out what's happening.
+你可能注意到子彈是朝右下角飛出去的。當敵人是從上方來襲時,這樣*完全幫不上忙*!我們花一點時間來搞清楚發生了什麼事。
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with 
-an [__*argument*__](#argue "extra chunk of information that the block needs") 
-that sets both the [__*vx*__](#whatVX "horizontal velocity") 
-and [__*vy*__](#whatVY "vertical velocity") 
-values to 50.
+``||variables:set projectile to||`` 積木預設帶了一個[__*參數*__](#argue "積木額外需要的一塊資訊"),把 [__*vx*__](#whatVX "水平方向的速度") 和 [__*vy*__](#whatVY "垂直方向的速度") 都設成 50。
 
 ```block
 let mySprite: Sprite = null
 let projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 50, 50)
 ```
 
-## Learn Velocity @unplugged
+## 認識速度 @unplugged
 
-To change the direction of the projectiles, you need to change the  
-speed they travel in a certain direction.  
-In MakeCode Arcade, we call that the [__*velocity*__](#veloc "speed in a given direction").
+想要改變子彈飛的方向,你需要改變它在某個方向上前進的速度。  
+在 MakeCode Arcade 中,我們把這個叫做[__*速度*__](#veloc "在特定方向上的快慢")。
 
-- Change whether they fly left or right by changing the [__*vx*__](#whatX "speed from left to right")  
-- Change whether they fly up or down by changing the [__*vy*__](#whatX "speed from top to bottom")  
-- What happens when you change both?
+- 改 [__*vx*__](#whatX "左右方向的速度") 可以改變子彈往左或往右飛  
+- 改 [__*vy*__](#whatX "上下方向的速度") 可以改變子彈往上或往下飛  
+- 兩個一起改會怎樣呢?
 
-![Directional Projectiles](/static/skillmap/space/vxvy.gif "Round and Round")
+![方向性子彈](/static/skillmap/space/vxvy.gif "繞圈圈")
 
 
-## Create a projectile
+## 建立一發子彈
 
-Play with the __vx__ and __vy__ values of the projectile until they're flying straight up at a decent speed.
+調整子彈的 __vx__ 和 __vy__ 數值,直到子彈能以合適的速度筆直往上飛為止。
 
 ```blocks
 let mySprite: Sprite = null
@@ -161,25 +148,21 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Custom effects
+## 自訂特效
 
-💥 Now for some special effects 💥
-
----
-
-🔲 Find 
-``||sprites:[mySprite] start [spray] effect||`` and snap it in at 
-the bottom of the ``||controller:on [A] button pressed ||`` container.  
-
-🔲 Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
-want the effects on your projectiles instead of on your ship.  
-
-🔲 Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!  
+💥 接下來加點特效吧 💥
 
 ---
 
-**Tip:** You can add another ``||sprites:[mySprite] start [spray] effect||`` block
-to add a separate effect on your spaceship
+🔲 找到 ``||sprites:[mySprite] start [spray] effect||``,把它接到 ``||controller:on [A] button pressed ||`` 容器的最下面。
+
+🔲 如果你想把特效套用在子彈上、而不是太空船上,把變數 ``||variables:mySprite||`` 改成 ``||variables:projectile||``。
+
+🔲 試試 ``||sprites:[spray]||`` 下拉選單裡的不同選項,挑一個你最喜歡的!
+
+---
+
+**小提示:** 你可以再加上另一個 ``||sprites:[mySprite] start [spray] effect||`` 積木,讓太空船本身也有一個獨立的特效。
 
 
 
@@ -204,12 +187,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 
-## Complete 
+## 完成 
 
-🎆 **Congratulations** 🎆
+🎆 **恭喜你** 🎆
 
-You can now use the direction buttons to move your space plane and
-the **Ⓐ** button to lauch projectiles!
+現在你可以用方向鍵移動你的太空船,並按 **Ⓐ** 按鈕發射子彈了!
 
-Play your game in the simulator, then click "Finish" so you can publish
-to share with family and friends.
+在模擬器中玩玩看自己的遊戲,然後點擊「Finish」,就可以發佈出去和家人、朋友分享!

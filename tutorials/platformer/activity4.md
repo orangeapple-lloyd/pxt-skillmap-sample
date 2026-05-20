@@ -1,4 +1,4 @@
-# Multiple Levels
+# 多重關卡
 
 ```jres
 {
@@ -131,34 +131,32 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 
 ```
 
-## Start @unplugged
+## 開始 @unplugged
 
-This tutorial will help add levels to your game. 
+這份教學會幫你在遊戲中加入多重關卡。
 
-To make level changes easier (and prevent having to write the same
-code again and again) we'll also learn to create a simple [**_function_**](#funky "group of code that can be called using a specific name").
+為了讓關卡切換更容易 (也避免一直寫重複的程式碼),我們還會學到怎麼建立一個簡單的 [**_函式_**](#funky "可以用特定名稱呼叫的一組程式碼")。
 
-![Levels and Functions](/static/skillmaps/platformer/platformer4.gif "And now for something completely different!  And a little bit the same.")
+![關卡與函式](/static/skillmaps/platformer/platformer4.gif "現在來點完全不一樣的!但又有點一樣。")
 
 
-## Make a function
+## 建立函式
 
-First, let's create a new function!
+首先,讓我們建立一個新的函式!
 
-Functions are chunks of code that you can name and 
-[**_call_**](#callingYou "insert into your code using the named label") 
-over and over from inside your program.  Unlike loops, you can run the code inside a 
-function again and again, even if you're doing something else inbetween.
+函式是一段可以命名的程式碼區塊,你可以在程式中
+[**_呼叫_**](#callingYou "用命名的標籤插入到程式中") 
+它一遍又一遍。和迴圈不同,你可以重複執行函式裡的程式碼,即使中間穿插了其他事情也沒問題。
 <hr/>
 
-🔲 In the toolbox, expand the ``||statusbar:˅ Advanced||`` tab and click 
-on the ``||functions: Functions||`` category.
+🔲 在工具箱中,展開 ``||statusbar:˅ Advanced||`` 分頁,然後點擊
+ ``||functions: Functions||`` 類別。
 
-🔲 Press the ``||controller: Make a Function...||`` button to create your new function.
+🔲 按下 ``||controller: Make a Function...||`` 按鈕來建立新函式。
 
-🔲 Click inside the textbox to name this function **startNextLevel**, then click **Done**.
+🔲 點擊文字框,將這個函式命名為 **startNextLevel**,然後點擊 **Done**。
 
-![naming a function](/static/skillmaps/platformer/name-function.gif "Say my name, say my name.")
+![為函式命名](/static/skillmaps/platformer/name-function.gif "說出我的名字,說出我的名字。")
 
 
 ```blocks
@@ -167,21 +165,19 @@ function startNextLevel() {
 ```
 
 
-## Refactoring pt. 1
-Excellent! You should have a **startNextLevel** function container 
-in your workspace. Let's fill it up!
+## 重構 (1)
+太棒了!你的工作區應該會出現一個 **startNextLevel** 函式容器。讓我們把它填滿!
 
-Right now, the code you need for starting a level lives inside the 
-``||loops: on start||`` container — we'll want to move it over to the function .
+目前,啟動關卡所需要的程式碼都在 ``||loops: on start||`` 容器裡 — 我們要把它搬到函式裡。
 <hr/>
 
-🔲 Pull the ``||scene: set tilemap to [ ]||`` block out of ``||loops: on start||``.
-Everything connected below should come along with it. 
+🔲 把 ``||scene: set tilemap to [ ]||`` 積木從 ``||loops: on start||`` 中拉出來。
+底下所有連在一起的積木都會跟著一起出來。
 
-🔲 Snap the whole chunk of code into your new **startNextLevel** function container.
+🔲 把整段程式碼接到你剛剛建立的 **startNextLevel** 函式容器裡。
 <hr/>
 
-**Voila! Now you have a function!**  
+**Voila!現在你有一個函式了!**  
 
 
 ```blocks
@@ -215,30 +211,25 @@ function startNextLevel () {
 }
 ```
 
-## Refactoring pt. 2
+## 重構 (2)
 
-Here's an important fact: *There's no point in building a function unless you
-__call__ it somewhere in your program.*
+有一個重要的觀念:*建立一個函式如果沒有在程式中某處
+__呼叫__ 它,就一點意義都沒有。*
 
-The function that you've already built is just a 
-[**_definition_**](#defineMe "explanation of the meaning") 
-to let the computer know
-which instructions to run when you call **startNextLevel** in your code.
-The definition doesn't give the computer any idea *when* to run those 
-instructions.
+你剛剛建立的函式只是一份
+[**_定義_**](#defineMe "說明意思") ,
+讓電腦知道當你在程式中呼叫 **startNextLevel** 時應該執行哪些指令。
+但定義並沒有告訴電腦 *什麼時候* 該執行這些指令。
 
-Let's add a function call into our program to let the computer know
-when to run **startNextLevel**.
+讓我們在程式中加入一個函式呼叫,告訴電腦什麼時候要執行 **startNextLevel**。
 <hr/>
-🔲 From the ``||functions: Functions||`` category, drag a 
-``||functions: call startNextLevel||`` block and snap it into the end of the
-``||loops: on start||`` container.
+🔲 從 ``||functions: Functions||`` 類別中,拖一個
+``||functions: call startNextLevel||`` 積木,接到
+``||loops: on start||`` 容器的最尾端。
 <hr/>
-Check your game in the simulator. It shouldn't feel any different than
-the original (yet).  
+在模擬器中檢查你的遊戲。它的感覺應該和原本沒兩樣 (目前還是這樣)。
 
-If it doesn't feel the same, take a look at the hint
-to make sure your code matches up.
+如果感覺不一樣,看看提示確認你的程式碼是不是有對上。
 
 ```blocks
 
@@ -299,17 +290,14 @@ info.setLife(3)
 startNextLevel()
 ```
 
-## Refactoring pt. 3
+## 重構 (3)
 
-🏆  Reach the trophy  🏆
+🏆  抵達獎盃  🏆
 
-The trophy tile would make a perfect doorway to the next level.  We already
-have an event for when the player overlaps that tile, we just need to change
-what happens inside of it. 
+獎盃圖塊是進入下一關的最佳通道。我們已經有一個事件會在玩家重疊到那個圖塊時觸發,只需要修改裡面發生的事情就好。
 <hr/>
-🔲 Remove the ``||game: game over <WIN>||`` block from the 
-**on sprite overlaps 🏆** event 
-and replace it with a new ``||functions: call startNextLevel||`` block.  
+🔲 把 **on sprite overlaps 🏆** 事件裡的 ``||game: game over <WIN>||`` 積木
+移除,然後換成一個新的 ``||functions: call startNextLevel||`` 積木。
 <br/>
 
 ```blocks
@@ -347,34 +335,32 @@ function startNextLevel () {
 }
 ```
 
-## Variable
+## 變數
 
-👾 Lots of great games have more than two levels 👾
+👾 很多很棒的遊戲都有不只兩個關卡 👾
 
-If we want to be able to keep track of the level we're on and
-recall that level whenever we need it, we're going to need
-a variable.
+如果我們想記住目前在哪一關,並且在需要的時候可以隨時找回這個資訊,那就需要一個變數。
 
-A variable will let us use the placeholder **currentLevel**
-to make decisions instead of creating new code for every possibility.
+有了變數,我們就能用 **currentLevel** 這個佔位符來做判斷,不用為每一種可能性都另外寫程式碼。
 <hr/>
 
-🔲 To make a new variable, go to the ``||variables: Variables||`` menu
-and click on ``||controller: Make a Variable...||`` .
+🔲 要建立新變數,前往 ``||variables: Variables||`` 選單
+並點擊 ``||controller: Make a Variable...||``。
 
-🔲 Enter **currentLevel** in the textbox and click **OK**.  
+🔲 在文字框中輸入 **currentLevel** 然後點擊 **OK**。  
 <br/>
 
-## Variable 2
+## 變數 (2)
 
-Now you have a variable named **currentLevel**.  Let's use it!
+現在你有一個叫做 **currentLevel** 的變數了。讓我們來用它!
 
-We'll need to [**_increment_**](#addOn "add to")
- **currentLevel** each time the **startNextLevel** function is called.
+每次呼叫 **startNextLevel** 函式時,我們都要
+[**_累加_**](#addOn "增加數值")
+ **currentLevel** 的值。
  <hr/>
 
-🔲 Snap a ``||variables: change [currentLevel] by [1]||`` block 
-into the **top** of the **startNextLevel** function.  
+🔲 把 ``||variables: change [currentLevel] by [1]||`` 積木接到 
+**startNextLevel** 函式的 **最上方**。  
 <br/>
 
 ```blocks
@@ -411,16 +397,14 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 1
+## 選擇關卡 (1)
 
-If we want to change the scene for each new level (*spoiler...we do!*) then we're
-going to need to add some logic that looks at the **currentLevel** variable
-before it sets the stage.  
+如果我們想讓每一個新關卡都有不同的場景 (*劇透...我們當然想!*),那就需要加入一些邏輯,在佈置舞台前先檢查 **currentLevel** 這個變數的值。
 
-This is the perfect place for another **if/then** element!
+這正是再用一個 **if/then** 元件的好地方!
 <hr/>
-🔲 Connect a new ``||logic: if <true> then||`` block near the **top** of 
-the **startNextLevel** function container, just below the block to **change currentLevel by 1** .  
+🔲 把一個新的 ``||logic: if <true> then||`` 積木接到
+ **startNextLevel** 函式容器靠 **頂端** 的位置,就放在 **change currentLevel by 1** 積木的下面。
 <br/>
 
 ```blocks
@@ -460,19 +444,17 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 2
+## 選擇關卡 (2)
 
-First, we should check and see if our current level is **1**.  
-If it is, we'll run the code for the first level,
-using our original tilemap.
+首先,我們要檢查目前的關卡是不是 **1**。
+如果是,就執行第一關的程式碼,使用我們原本的圖塊地圖。
 <hr/> 
 
-🔲 Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
- in the empty ``||logic:if <true> then||`` container.
+🔲 找一個 ``||logic:[0] [=] [0]||`` 積木來取代空的 ``||logic:if <true> then||`` 容器裡的 **`<true>`**。
 
-🔲 Replace the first **0** in the logic arguement with  ``||variables:currentLevel||``. 
+🔲 將邏輯參數中的第一個 **0** 換成 ``||variables:currentLevel||``。 
 
-🔲 Replace the second **0** of the logic argument with **1**.  
+🔲 將邏輯參數中的第二個 **0** 換成 **1**。  
 <br/>
 
 ```blocks
@@ -511,22 +493,18 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## 選擇關卡 (3)
 
-💡  When restructuring a program, it's a good habit to make sure everything works 
-as expected before making it more complicated. 
+💡  在重新組織程式時,養成「在事情變得更複雜之前,先確認一切都能正常運作」的好習慣。
 
-Let's get our **if/then** logic working with our current game before we add new levels.
+讓我們先讓 **if/then** 邏輯能搭配目前的遊戲運作,之後再來加入新的關卡。
 
 <hr/>
-If the player is on level 1, we want to show our current tile map.
+如果玩家在第 1 關,我們要顯示目前的圖塊地圖。
 
-🔲 Move the ``||scene: set tilemap to [ ]||`` block from beneath the **if/then**
-and snap it inside the empty container.
+🔲 把 ``||scene: set tilemap to [ ]||`` 積木從 **if/then** 底下移動過來,接到空的容器裡面。
 
-The connected code will travel with the ``||scene: set tilemap to [ ]||`` block, 
-so once it has been connected, you'll need to grab the rest of the code and 
-snap it back in place beneath the **if/then**.
+連在後面的程式碼會跟著 ``||scene: set tilemap to [ ]||`` 積木一起移動,所以一旦它接好之後,你還要把剩下的程式碼抓起來,重新接回到 **if/then** 的下方。
 
 ```blocks
 
@@ -564,23 +542,20 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3.5
+## 選擇關卡 (3.5)
 
-That's a great start...but to ensure that it's working the same way 
-as your original game, you'll need the player to win when they reach the trophy.
+這是個很好的開始...但為了確保它和你原本的遊戲運作方式一致,你還需要讓玩家在抵達獎盃時獲勝。
 
-Let's think about how to do this with the conditional logic:
- - **IF** you're just starting and **currentLevel** is **1**, **THEN** put up the tilemap
- - Once we've reached the trophy, **currentLevel** is **bigger than 1**, and our player wins! 
+讓我們想想要怎麼用條件邏輯來做到這件事:
+ - **IF** 才剛開始而且 **currentLevel** 是 **1**,**THEN** 就放上圖塊地圖
+ - 當我們抵達獎盃時,**currentLevel** 會 **大於 1**,玩家獲勝!
 
-Thinking about it this way means we can use an **else** clause in our condition 
-to capture any case where **currentLevel** is larger than any level numbers we've 
-already defined.
+這樣思考的話,我們就能在條件中使用 **else** 子句,涵蓋所有 **currentLevel** 比我們已經定義的關卡編號還要大的情況。
 <hr/>  
 
-🔲 Press the **⊕** button on the **if/then** container to add an **else** clause.
+🔲 按下 **if/then** 容器上的 **⊕** 按鈕,加入一個 **else** 子句。
 
-🔲 Snap a ``||game: game over <WIN>||`` block inside.
+🔲 把 ``||game: game over <WIN>||`` 積木接到裡面。
 
 ```blocks
 let myEnemy: Sprite = null
@@ -621,29 +596,27 @@ function startNextLevel () {
 }
 ```
 
-## Choosing a level pt. 3
+## 選擇關卡 (3)
 
-❓❓ Ready to take this to another level ❓❓
+❓❓ 準備好把遊戲推向下一關了嗎 ❓❓
 
-From here, adding new levels is extremely straightforward.  All you need to do is:
- - Add a new **else if** clause to your logic container
- - Copy the condition from your previous level into the new **else if**
- - Change the number on the right-side of the **=** to be the number of your new level
- - Set the new tilemap inside of the new **else if**
+接下來,加入新關卡超級簡單。你只需要:
+ - 在你的邏輯容器裡加入一個新的 **else if** 子句
+ - 把上一關的條件複製到新的 **else if** 裡
+ - 把 **=** 右邊的數字改成新關卡的編號
+ - 在新的 **else if** 裡設定新的圖塊地圖
 
- That's it!  Ready to give it a shot?
+ 就這樣!準備好試試看了嗎?
  <hr/>
 
-🔲 Press the **⊕** button on the **if/then/else** container to add an 
-**else if** clause.
+🔲 按下 **if/then/else** 容器上的 **⊕** 按鈕,加入一個
+**else if** 子句。
 
-🔲 Duplicate the ``||logic:[currentLevel] [=] [1]||`` block and place the 
-copy in the new **else if** condition slot.
+🔲 複製一個 ``||logic:[currentLevel] [=] [1]||`` 積木,把副本放到新的 **else if** 條件欄位中。
 
-🔲 Change **1** to **2**.
+🔲 把 **1** 改成 **2**。
 
-🔲 Duplicate the ``||scene: set tilemap to [ ]||`` block from level 1 and snap it into the 
-empty **else if** container.  
+🔲 從第 1 關複製一個 ``||scene: set tilemap to [ ]||`` 積木,接到空的 **else if** 容器中。  
 <br/>
 
 
@@ -666,21 +639,20 @@ let currentLevel = 0
 
 ```
 
-## Choosing a level pt. 4
+## 選擇關卡 (4)
 
-🎨 Time to get creative 🎨
+🎨 該發揮創意了 🎨
 
-What would you like to add or remove from the tilemap for your second level?
-Click on the tilemap icon inside the ``||scene: set tilemap to [ ]||`` block
-and edit it until you've got something of your own. 
+你想在第二關的圖塊地圖中加入或拿掉什麼東西呢?
+點擊 ``||scene: set tilemap to [ ]||`` 積木裡的圖塊地圖圖示,
+編輯到變成你自己想要的樣子。
 
-Don't forget to leave a trophy tile in the new tilemap so the player has a way
-to win!
+別忘了在新的圖塊地圖裡留下獎盃圖塊,讓玩家有獲勝的方法!
 
-You can follow those same steps to add a 3rd, 4th, or even 5th level!
+你可以照著同樣的步驟新增第 3、第 4,甚至第 5 關!
 
 
-## Enemy cleanup pt. 1
+## 清除敵人 (1)
 
 ```ghost
 sprites.allOfKind(SpriteKind.Enemy)
@@ -689,22 +661,20 @@ for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
     }
 ```
 
-🎮 Try your game 🎮
+🎮 試玩一下你的遊戲 🎮
 
-There may be a couple of hiccups with the level changes...for example, we 
-need to clean up enemies from the last level before loading a new one.
+關卡切換時可能會有一些小問題...例如,我們需要在載入新關卡之前,先清掉上一關的敵人。
 
-To do that, you'll need to go through your entire list of enemies and 
-destroy them one by one. Fortunately, Arcade has a block for this exact purpose.
+要做到這件事,你必須走過整個敵人清單,一個一個把它們銷毀。還好,Arcade 提供了正好可以做到這件事的積木。
 <hr/>
 
-🔲 Snap a ``||loops: for element [value] of [list]||`` loop into the very **top**
- of the **startNextLevel** function.
+🔲 把 ``||loops: for element [value] of [list]||`` 迴圈接到
+ **startNextLevel** 函式的最 **上方**。
 
-🔲 From the ``||sprites:Sprites||`` category, grab an ``||sprites:array of sprites of kind [Player]||``
- argument and replace the **list** variable in the header of your new loop.
+🔲 從 ``||sprites:Sprites||`` 類別中,抓一個 ``||sprites:array of sprites of kind [Player]||``
+ 參數,取代你新迴圈標頭中的 **list** 變數。
 
-🔲 Change the **array of sprites** kind to **Enemy**. 
+🔲 把 **array of sprites** 的種類改為 **Enemy**。 
 <hr/>
 
 
@@ -754,19 +724,19 @@ function startNextLevel () {
 ```
 
 
-## Enemy cleanup pt. 2
+## 清除敵人 (2)
 
-Now you have a loop that will focus on each enemy, one at a time. 
-This is your chance to destroy them!
+現在你有一個迴圈,可以一次處理一個敵人。
+這就是把它們銷毀的好時機!
 <hr/>
 
-🔲 Drag a ``||sprites: destroy [mySprite]||`` block into the new **for element** loop.
+🔲 把 ``||sprites: destroy [mySprite]||`` 積木拖到新的 **for element** 迴圈裡。
 
-🔲 Replace ``||variables: mySprite||`` with the ``||variables: value||``
-attribute from the header of the **for element** loop.  
+🔲 把 ``||variables: mySprite||`` 換成 **for element** 迴圈標頭中的
+ ``||variables: value||`` 屬性。  
 <hr/>
 
-** That's it!  Your game can have as many levels as you can imagine!**
+** 就這樣!你的遊戲可以有任何你想得到的關卡數量!**
 
 
 
@@ -815,4 +785,3 @@ function startNextLevel () {
 
 }
 ```
-

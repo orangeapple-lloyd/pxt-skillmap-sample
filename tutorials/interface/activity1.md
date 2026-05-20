@@ -1,4 +1,4 @@
-# Get to Know MakeCode Arcade 
+# 認識 MakeCode Arcade
 
 
 ```ghost
@@ -30,63 +30,59 @@ game.onUpdateInterval(5000, function () {
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## 簡介 @unplugged
 
-![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
+![興奮的猴子](/static/skillmap/interface/monkey.png "興奮的猴子準備好了!" )
 
-**Are you ready to start coding your own games?**
+**準備好開始寫自己的遊戲了嗎?**
 
-Complete this tutorial to learn how to:
-- follow tutorial prompts
-- find blocks in the toolbox
-- build code in the workspace
-- run your game on the built-in simulator 
+完成這份教學,你會學到:
+- 跟著教學的步驟操作
+- 在積木工具箱中找到積木
+- 在工作區中組合程式
+- 在內建模擬器上執行你的遊戲
 
-Before you know it, you'll have an arcade game of your very own!
+不知不覺中,你就會擁有一款屬於自己的 Arcade 遊戲!
 
-## step 1 
+## 步驟 1 
 
-**⭐Welcome⭐**
+**⭐歡迎⭐**
 
-You've just discovered the most important part of following a tutorial — reading instructions!
+你剛剛發現了跟著教學操作最重要的一件事 —— 讀說明!
 
-If you can't see all of the instructions, click **[v More...]** below to expand the box.
+如果你看不到完整的說明,點擊下方的 **[v 更多...]** 展開內容。
 
 ---
 
-When you're ready to move to the next step, click **[ >  Next]** to continue.  
+當你準備好進入下一步時,點擊 **[ >  下一步]** 繼續。  
 
 
-## step 2
+## 步驟 2
 
-This box is where you'll find information for each step. 
+這個方框會顯示每一步的說明資訊。
 
-If you don't find all of the info you need, 
-click the lightbulb to the right for an extra hint.
+如果你需要更多資訊,點擊右側的燈泡,可以得到額外的提示。
 
 
 #### ~ tutorialhint 
 ```
-**You found the hints!**
+**你發現提示了!**
 ```
 
 
-## Using the workspace
+## 使用工作區
 
-Now let's talk about your [__*workspace*__](#workIt "The area where you build code").
+現在我們來談談你的 [__*工作區*__](#workIt "組合程式的區域")。
 
-Your workspace is the area below the instructions where you'll connect blocks to build your program. 
-Not all blocks will connect with one another, but we'll talk more about that later.
-
----
-
-🔲 Click inside the text area of the ``||game:splash "___"||`` block 
-and change the current sentence to something a little more exciting.
+工作區是說明下方的區域,你會在這裡把積木接在一起,組合成你的程式。並不是所有積木都能互相連接,我們稍後會再說明。
 
 ---
 
-**Tip:** Did you notice that the first use of the word __workspace__ had a special look? 
-From time to time, we'll enhance important words. Roll your mouse over them to see a definition.
+🔲 點擊 ``||game:splash "___"||`` 積木裡的文字區域,把目前的句子改成更有趣的內容。
+
+---
+
+**小提示:** 你有注意到剛剛第一次出現「__工作區__」這個詞時,長得不太一樣嗎?我們會不時為重要的詞彙加上特殊樣式。把滑鼠移到上面就可以看到定義。
 
 #### ~ tutorialhint 
 ```blocks
@@ -98,44 +94,37 @@ game.splash("These blocks are in your workspace!")
 
 ```
 
-## Meet the Blocks  @unplugged
+## 認識積木  @unplugged
 
-Blocks can be dragged out from the  [__*toolbox*__](#tools "The strip to the left of your workspace that lists block categories."), 
+積木可以從 [__*工具箱*__](#tools "工作區左側列出積木分類的長條區域") 拖出來,進行連接、複製與刪除。
 
-connected, duplicated, and deleted.
+繼續往下,了解更多積木的用法。
 
-Keep going to learn more about blocks.
-
-![Block Animation](/static/skillmap/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
+![積木動畫](/static/skillmap/interface/use_blocks.gif "積木的出現、複製與刪除。" )
 
 
 
-## Your Toolbox
+## 你的工具箱
 
-**Blocks you need won't always be in the workspace to start.**
+**你需要用到的積木,並不一定一開始就在工作區裡。**
 
-In the instructions, block descriptions for the block you need will 
-often be highlighted in the same color as the toolbox 
-category where they live. 
+說明中,你需要找的積木描述通常會用和工具箱分類相同的顏色標記。
 
-**For example:** We might use ``||game:splash "___"||`` when 
-we want you to find this:
+**舉例來說:** 當我們希望你找出下面這個積木時,會寫成 ``||game:splash "___"||``:
 
 ```block
 game.splash(" ")
 ```
 
-This block adds a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to your project.
+這個積木會在你的專案中加上一個 [__*啟動畫面*__](#splasht "程式或關卡載入時顯示的全螢幕訊息")。
 
-## Your Toolbox 2
+## 你的工具箱 2
 
 
 
-**Let's see how this works**
+**來看看實際怎麼操作**
 
-🔲 Find the 
-``||scene:set background color to [ ]||`` block and snap it at the top of 
-the **on start** container already in the workspace. 
+🔲 找到 ``||scene:set background color to [ ]||`` 積木,把它接在工作區中已經有的 **on start** 容器的最上面。
 
 #### ~ tutorialhint 
 ```blocks
@@ -145,33 +134,28 @@ game.splash("My monkey is better than yours")
 
 
 
-## The Exception
+## 例外狀況
 
-Every rule has an exception, so let's look at one of the blocks
-that doesn't share the same color as the category where it lives.
+每條規則都會有例外,我們來看看其中一個顏色和所在分類不同的積木。
 
-The ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
-is red, but it lives inside the ``||sprites:Sprites||`` category.
+``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 這個積木是紅色的,但它住在 ``||sprites:Sprites||`` 分類裡面。
 
 ---
 
-<!-- **Tip:** If you can't find the block you're looking for, try -->
+<!-- **小提示:** 找不到想要的積木時,可以試試 -->
 
 
-🔲 Snap ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` into the
-end of the **on start** container and 
-play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on the screen") shows on the screen.
+🔲 把 ``||variables:set [my sprite] to sprite [ ] of kind [Player]||`` 接到 **on start** 容器的最後面,玩一玩,讓畫面上出現一個 [__*角色*__](#sprote "在螢幕上移動的 2D 圖像")。
 
-*(Roll your mouse over the word __sprite__ above to see a definition.)*
+*(把滑鼠移到上面的「__角色__」可以看到定義。)*
 
 ---
 
-**Tip:** Drag ``||game:splash "___"||`` out of the ``||loops:on start||`` container
-and drop it back into the toolbox to delete it so your sprite will be revealed!
+**小提示:** 把 ``||game:splash "___"||`` 從 ``||loops:on start||`` 容器中拖出來,丟回工具箱即可刪除它,你的角色就會出現!
 
 #### ~ tutorialhint
 
-![Open image editor](/static/skillmap/misc/open-image-editor-small.gif "How to open the image editor." )
+![開啟圖像編輯器](/static/skillmap/misc/open-image-editor-small.gif "如何開啟圖像編輯器。" )
 
 ---
 
@@ -198,14 +182,11 @@ let mySprite = sprites.create(img`
 ```
 
 
-## Container Blocks
+## 容器積木
 
-**Now let's look at different types of blocks and how to use them.** 
+**接下來看看不同類型的積木,以及它們怎麼使用。** 
 
-First, there are [__*container blocks*__](#blockIt "Blocks that hold other blocks"). 
-Container blocks have an edge at both the the top and bottom with an open space
-in the middle that allows other blocks to snap inside. Container blocks control 
-*when* the code inside runs. Here is an example:
+首先是 [__*容器積木*__](#blockIt "可以裝其他積木的積木")。容器積木的上下兩端各有一條邊,中間留有空白,讓其他積木可以扣進去。容器積木控制裡面的程式碼*什麼時候*執行。範例如下:
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -214,8 +195,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 ---
 
-🔲  Find an ``||controller:on [A] button pressed ||`` container 
-block and drag it into the workspace. You will add to it in the next step.  
+🔲  找到 ``||controller:on [A] button pressed ||`` 容器積木,把它拖到工作區。下個步驟會繼續加東西進去。
 
 #### ~ tutorialhint
 
@@ -225,14 +205,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Standard Blocks
+## 一般積木
 
-Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs"). 
-Standard blocks are single-line blocks with notches at the top and bottom that
-allow them to click-in between other pieces. These blocks run in order from top 
-to bottom within the container that they're placed.
+接下來是 [__*一般積木*__](#sBlockIt "佔大多數程式的單行積木")。一般積木是上下都有凸起或凹陷的單行積木,可以扣在其他積木之間。這類積木會依照它們在容器中由上到下的順序執行。
 
-Here is an example of a standard block:
+下面是一般積木的範例:
 
 ```block
 let mySprite: Sprite = null;
@@ -241,9 +218,7 @@ mySprite.startEffect(effects.spray)
 
 ---
 
-🔲  Find a ``||sprites:[mySprite] start [spray] effect ||``  
-block and snap it into the  **on A button pressed** container...then 
-choose your own effect!
+🔲  找到 ``||sprites:[mySprite] start [spray] effect ||`` 積木,把它接到 **on A button pressed** 容器裡⋯⋯然後選一個你自己喜歡的特效!
 
 #### ~ tutorialhint
 ```blocks
@@ -256,27 +231,21 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## Value Blocks
+## 數值積木
 
-Finally, we have [__*value blocks*__](#aBlockIt "special pieces that provide values for other blocks"). 
-Value blocks are special pieces that add information to other
-blocks. Sometimes they're pointy, sometimes they're rounded,
-but they always need another block to snap into. Value blocks look something like this:
+最後是 [__*數值積木*__](#aBlockIt "為其他積木提供數值的特別積木")。數值積木是會把資訊填入其他積木的特別積木。它們有時是尖角、有時是圓角,但一定要嵌在其他積木裡才能用。數值積木看起來像這樣:
 
-![Value Blocks](/static/skillmap/interface/parameter-blocks.png "This is what the shape of an value block looks like" )
+![數值積木](/static/skillmap/interface/parameter-blocks.png "這是數值積木的形狀。" )
 
 ---
 
-🔲  Snap a ``||sprites:[mySprite] say [":)"] ||`` block into the end of the
-**on A button pressed** container.
+🔲  把 ``||sprites:[mySprite] say [":)"] ||`` 積木接到 **on A button pressed** 容器的最後面。
 
-🔲  Find the ``||game: ask for number [" "] ||`` value block and pop it inside to replace **":)"**.
+🔲  找到 ``||game: ask for number [" "] ||`` 數值積木,塞進去取代 **":)"**。
 
 ---
 
-**Tip:** Value blocks have different shapes 
-depending on what kind of information they add. Each value will only
-fit in certain types of spaces. 
+**小提示:** 數值積木會依照它提供的資訊類型,呈現不同形狀。每種數值只能嵌進特定形狀的空格裡。
 
 #### ~ tutorialhint
 ```blocks
@@ -287,28 +256,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Putting it Together
+## 組合起來
 
-🎨 Now get creative 🎨
+🎨 現在發揮你的創意 🎨
 
-Feel free to take a look at the extra blocks we've added into the toolbox. 
+可以看看我們在工具箱裡加進來的其他積木。
 
-It's okay if you don't know what they all do.
-Play around with them and see how they affect your game!
+不知道它們是做什麼用的也沒關係。試著用看看,觀察它們對遊戲有什麼影響!
 
 ---
 
-**Tip:** You can test your game whenever you want using the simulator
-to the left!  Use the refresh button (🔄) to reload it, and play your
-game using the buttons you've programmed!  
+**小提示:** 你隨時都可以用左側的模擬器測試遊戲!按重新整理按鈕(🔄)重新載入,然後用你設定的按鈕操作遊戲!  
 
 
 
-## Conclusion 
+## 結語 
 
-🎈 Congratulations 🎈 
+🎈 恭喜你 🎈 
 
-You've learned everything you need to know to graduate to a new tutorial.
+你已經學會所有進入下一份教學所需要的基礎了。
 
-Now you can continue on and learn even more tricks for
-creating games with MakeCode Arcade!  
+繼續學習,你會掌握更多在 MakeCode Arcade 中製作遊戲的技巧!  

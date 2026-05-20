@@ -1,4 +1,4 @@
-# Enemy Follows
+# 敵人追逐
 
 ```jres
 {
@@ -91,34 +91,33 @@ tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 info.setLife(3)
 ```
 
-## Start @unplugged
+## 簡介 @unplugged
 
-In this lesson, we'll take what we made in previous tutorials and add simple enemies.  
+在這堂課中,我們會延續前面幾堂教學的成果,加入簡單的敵人。
 
-We'll also use a sprite overlap event to have enemies interact with the player sprite.
+我們也會使用角色重疊事件,讓敵人能跟玩家角色互動。
 
-![Editing our platformer](/static/skillmaps/platformer/platformer3.gif "Time to live dangerously!")
+![編輯我們的平台跳躍遊戲](/static/skillmaps/platformer/platformer3.gif "刺激一下生活吧!")
 
 
-## Spawning enemies pt. 1
+## 生成敵人 pt. 1
 
-**Let's start by choosing a location to [__*spawn*__](#spawnd "make appear") 
-some enemies on the tilemap.**  
+**首先,我們要在圖塊地圖上選擇一個位置來 [__*生成*__](#spawnd "讓它出現") 一些敵人。**
 
-We'll use purple **[ ! ]** tiles as enemy spawn points.
+我們會用紫色的 **[ ! ]** 圖塊作為敵人的生成點。
 <hr/>
 
-🔲 Drag out a ``||loops: for element [value] of [list]||`` [__loop__](#loopd "a segment of code that runs multiple times in a row")
-and snap it into the bottom of the ``||loops: on start||`` container.
+🔲 拖出一個 ``||loops: for element [value] of [list]||`` [__迴圈__](#loopd "一段會連續執行多次的程式碼")
+接到 ``||loops: on start||`` 容器的底部。
 
-The [__*list*__](#listical  "ordered group of items") we need in the header of that 👆 loop 
-is the list of saved location for each of the **[ ! ]** blocks. 
-Fortunately, we have a piece of code that tells us where those are.
+我們要放在 👆 這個迴圈標頭裡的 [__*list*__](#listical  "有順序的項目集合"),
+就是每個 **[ ! ]** 積木所儲存位置的清單。
+幸好我們有一段程式碼可以告訴我們這些位置在哪裡。
 
-🔲 Find the ``||scene: array of all [ ] locations||`` argument block and 
-drag it into the header of the new loop where the **list** argument is.
+🔲 找到 ``||scene: array of all [ ] locations||`` 參數積木,
+把它拖到新的迴圈標頭中 **list** 參數的位置。
 
-🔲 Click on the checkerboard and change it to the **[ ! ]** tile.
+🔲 點擊棋盤格圖示,把它改成 **[ ! ]** 圖塊。
 <br/>
 
 ```blocks
@@ -154,30 +153,29 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## A little lesson @unplugged
+## 小小說明 @unplugged
 
-Now our loop will run for each tile location.  
+現在我們的迴圈會在每一個圖塊位置都執行一次。
 
-Each time through the loop, the argument **"value"** will contain another 
-location on the tilemap!
+每一次迴圈執行時,**"value"** 參數會包含圖塊地圖上另一個不同的位置!
 
 
-## Spawning enemies pt. 3
+## 生成敵人 pt. 3
 
-👾 Time to spawn some enemies 👾 
+👾 該來生成一些敵人了 👾
 <hr/>
 
-🔲 Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||`` 
-into the new loop.
+🔲 拖出 ``||variables: set [mySprite2] to sprite [ ] of kind [player]||``
+放進新的迴圈裡。
 
-🔲 Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change") 
-and choose to create a **new variable** called **myEnemy**. 
+🔲 點擊 **mySprite2** [__*變數*__](#varied "用來保存可變動內容的標籤"),
+選擇建立一個 **新變數**,命名為 **myEnemy**。
 
-🔲 Click the grey sprite rectangle inside the new block to draw an image for the enemy
-(or choose one from the gallery.)
+🔲 點擊積木裡灰色的角色框,為敵人畫一張圖
+(也可以從圖庫裡選一張)。
 
 
-🔲 Set the sprite kind to **Enemy**  
+🔲 把角色種類設為 **Enemy**
 <br/>
 
 ```blocks
@@ -231,20 +229,18 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Spawning enemies pt. 3
-Our enemies are spawning now, but they're all hanging out in one location.
+## 生成敵人 pt. 3
+敵人現在會生成了,但他們全部都擠在同一個位置。
 
-Let's start each of them on a different **[ ! ]** tile. (Each location will be 
-stored in the **value** variable at some point as we move through
-the **for element** loop.)
+我們來讓他們各自從不同的 **[ ! ]** 圖塊出發吧。(在 **for element**
+迴圈執行的過程中,每個位置都會在某個時刻被存進 **value** 變數裡。)
 <hr/>
 
-🔲 Drag a ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` block 
-to the bottom of the **for element** loop.
+🔲 把一個 ``||scene: place [mySprite] on top of tilemap col [0] row [0]||`` 積木
+拖到 **for element** 迴圈的底部。
 
-🔲 Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
-argument block with the ``||variables: value||`` argument from the header of the
-**for element** loop.
+🔲 把角色變數改成 **myEnemy**,並把 ``||scene: tilemap col [0] row [0]||``
+參數積木替換成 **for element** 迴圈標頭的 ``||variables: value||`` 參數。
 <br/>
 
 ```blocks
@@ -299,17 +295,17 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Enemy follow
-💤 Did you notice that we have the laziest enemies ever? 💤
+## 敵人追逐
+💤 你有沒有發現我們的敵人是史上最懶的敵人? 💤
 
-Let's wake-up our sprites and get them following our player.
+來叫醒這些角色,讓他們開始追逐玩家吧。
 <hr/>
-🔲 Snap a ``||sprites: set [myEnemy] follow [mySprite]||`` block 
-into the bottom of the **for element** loop.
+🔲 把一個 ``||sprites: set [myEnemy] follow [mySprite]||`` 積木
+接到 **for element** 迴圈的底部。
 
-🔲 Change the first sprite argument to **myEnemy** and the second to **mySprite**.
+🔲 把第一個角色參數改成 **myEnemy**,第二個改成 **mySprite**。
 
-🔲 Press the **⊕** on the new block and change the speed to **30**.
+🔲 按下新積木上的 **⊕**,把速度改成 **30**。
 <br/>
 
 ```blocks
@@ -364,44 +360,44 @@ for (let value of tiles.getTilesByType(myTiles.tile5)) {
 }
 ```
 
-## Damage pt. 1 @unplugged
+## 傷害 pt. 1 @unplugged
 
-Now the enemies should be moving toward the player.
+現在敵人應該會朝著玩家移動了。
 
-What happens when the enemies reach the player? **Nothing?!?**
-Well, that's no fun.  
-Let's add some code to make this more exciting.  
+那敵人碰到玩家時會發生什麼事呢? **什麼都不會發生?!?**
+這樣可不好玩。
+我們來加一些程式碼讓遊戲變得更刺激吧。
 😈👿😈 &nbsp;  😱  
 <hr/>
 
-**Our player and enemies might meet under a couple of different** 
-[**_conditions_**](#condy "thing we need to know before deciding what happens next"):
+**我們的玩家和敵人可能會在幾種不同的**
+[**_條件_**](#condy "在決定接下來會發生什麼之前需要知道的事") **下相遇:**
 
-1. **If the player jumps on an enemy, the enemy is destroyed**
+1. **如果玩家跳到敵人身上,敵人會被消滅**
 
-2. **If the player runs into an enemy, 
-the player takes damage and the enemy is destroyed**
+2. **如果玩家撞到敵人,
+玩家會受到傷害,敵人也會被消滅**
 
 <hr/>
-We'll need an **on sprite overlap** event to know if these happen!
+我們需要一個 **on sprite overlap** 事件來判斷這些情況是否發生!
 
-## Damage pt. 2
-In both overlap cases, we want to destroy the enemy sprite...so 
-let's code that part first.  
+## 傷害 pt. 2
+在這兩種重疊的情況中,我們都想消滅敵人角色......所以
+就先寫這部分的程式碼吧。
 💥👿💥
 <hr/>
 
-🔲 From the ``||sprites: Sprites||`` category, drag an 
-``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||`` 
-[__*event*__](#eventTime "element that makes something happen when a certain action is performed")
- container into the workspace.
+🔲 從 ``||sprites: Sprites||`` 類別中,拖出一個
+``||sprites: on [sprite] of kind [Player] overlaps [otherSprite] of kind [Player]||``
+[__*事件*__](#eventTime "在執行某個動作時讓某件事發生的元素")
+容器到工作區中。
 
-🔲 Leave the first kind as **Player** and change the second kind to **Enemy**.
+🔲 第一個種類保持為 **Player**,把第二個種類改成 **Enemy**。
 
-🔲 Snap a ``||sprites: destroy [mySprite]  ⊕||`` block into the new event container.
+🔲 把一個 ``||sprites: destroy [mySprite]  ⊕||`` 積木接到新的事件容器中。
 
-🔲 Drag the ``||variables: otherSprite||`` argument from the **on sprite overlaps** 
-event to replace the ``||variables: mySprite||`` variable inside the destroy block.
+🔲 把 **on sprite overlaps** 事件中的 ``||variables: otherSprite||`` 參數拖出來,
+替換掉 destroy 積木裡的 ``||variables: mySprite||`` 變數。
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -409,16 +405,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 4 @unplugged
+## 傷害 pt. 4 @unplugged
 
-❗ Here comes the exciting part ❗
+❗ 刺激的部分來了 ❗
 
-We need to figure out whether the enemy was **jumped on** or **run into**.  
-**_THEN_**, based on that 
-[**_condition_**](#condy "thing we need to know before deciding what happens next"),
- we need to run different code.
+我們需要判斷敵人是被 **踩到** 還是被 **撞到**。
+**_然後_**,根據那個
+[**_條件_**](#condy "在決定接下來會發生什麼之前需要知道的事"),
+執行不同的程式碼。
 
-The ``||logic:if <true> then||`` block can make that happen.  
+``||logic:if <true> then||`` 積木可以幫我們做到這件事。
 
 ```block
     if (true) {
@@ -427,32 +423,31 @@ The ``||logic:if <true> then||`` block can make that happen.
 <hr/>
 
 
-## Damage pt. 5
+## 傷害 pt. 5
 
-🔲 Start by adding an ``||logic:if <true> then||`` container to the end
-of the newest **on sprite overlaps** container. 
+🔲 先在最新的 **on sprite overlaps** 容器尾端加入一個
+``||logic:if <true> then||`` 容器。
 <hr/>
-The next part will take a little deep thinking  🤯
+下一步需要動點腦筋 🤯
 
-In order to have reached the ``||logic:if <true> then||`` container, the 
-program must already know that an enemy has overlapped the player. 
-Now we just have to determine whether or not the player jumped on the enemy
-from the top.  
+要能執行到 ``||logic:if <true> then||`` 容器,
+程式一定已經知道有敵人跟玩家重疊了。
+現在我們只需要判斷玩家是否是從上方跳到敵人身上。
 
-In this case, we want to check that the bottom of the player was higher
-than the center (**y**) of the enemy. Here's how to do that:
+在這種情況下,我們要檢查玩家的底部是否比敵人的中心 (**y**) 更高。
+做法如下:
 
-🔲 Drag out a ``||logic:0 < 0||`` logic argument block and snap it into
-``||logic:if <true> then||`` to replace the ** `<true>` ** argument.
+🔲 拖出一個 ``||logic:0 < 0||`` 邏輯參數積木,放進
+``||logic:if <true> then||``,替換掉 ** `<true>` ** 參數。
 
-🔲 On the left-hand side of the **<**, place a ``||sprites:[mySprite] [x]||`` block and change 
-the **x** to **bottom**, and replace **mySprite** with the **sprite** 
-variable from the **on sprite overlaps** header.
+🔲 在 **<** 的左邊放一個 ``||sprites:[mySprite] [x]||`` 積木,把
+**x** 改成 **bottom**,並把 **mySprite** 替換成 **on sprite overlaps**
+標頭中的 **sprite** 變數。
 
-🔲 Right-click on the logic argument that you just finished to duplicate it. 
+🔲 在剛剛完成的邏輯參數上按右鍵,把它複製一份。
 
-🔲 Place the duplicate block to the right of the **<**. Replace **bottom** 
-with **y** and replace **sprite** with **otherSprite**.  
+🔲 把複製的積木放在 **<** 的右邊。把 **bottom** 改成 **y**,
+再把 **sprite** 改成 **otherSprite**。
 <br/>
 
 
@@ -464,16 +459,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Damage pt. 5.5
-To add more style, let's make the player bounce after they've jumped on an enemy.
+## 傷害 pt. 5.5
+為了讓畫面更有風格,我們讓玩家踩到敵人後彈跳一下。
 <hr/>
 
-🔲 Snap a ``||sprites:set [mySprite] [x] to ||`` block into the empty **if/then** 
-logic container and replace **mySprite** with **sprite**.
+🔲 把一個 ``||sprites:set [mySprite] [x] to ||`` 積木接到空的 **if/then**
+邏輯容器中,並把 **mySprite** 換成 **sprite**。
 
-🔲 Replace **x** with **vy (velocity y)** using the dropdown menu.
+🔲 用下拉選單把 **x** 換成 **vy (velocity y)**。
 
-🔲 Change the value from **0** to **-100**.  
+🔲 把數值從 **0** 改成 **-100**。
 <br/>
 
 
@@ -487,17 +482,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 
-## Damage pt. 6 @unplugged
+## 傷害 pt. 6 @unplugged
 
-Now we've written code that checks if the player has bounced on an enemy.  
-**But what if it didn't?**
+我們已經寫好程式碼來檢查玩家是否彈跳到敵人身上。
+**但如果沒有呢?**
 
-We need to add an option in case the player and enemy overlapped in a 
-different way.  This catch-all condition is called an **else** clause. 
+我們需要加一個選項,處理玩家跟敵人以不同方式重疊的情況。
+這種「包山包海」的條件叫做 **else** 子句。
 <hr/>
 
-To add an **else** clause to our **if/then** logic, simply press
-the **⊕** at the bottom-left corner of the **if/then** container and one will appear!
+要在 **if/then** 邏輯中加入 **else** 子句,只要按下
+**if/then** 容器左下角的 **⊕**,它就會出現!
 
 
 ```block
@@ -512,15 +507,15 @@ the **⊕** at the bottom-left corner of the **if/then** container and one will 
 })
 ```
 
-## Damage pt. 6.6
+## 傷害 pt. 6.6
 
-Now that we have an **else** clause, we can use it
-for anything that needs to run when the player and enemy
-overlap in a non-jumping way. 
+現在我們有了 **else** 子句,
+可以用它來處理玩家和敵人以非跳躍方式重疊時
+要執行的任何程式碼。
 <hr/>
 
-🔲 To remove a life from the player under that condition, 
-snap a ``||info: change life by [-1]||`` block into the empty **else** clause.  
+🔲 要在這種情況下扣掉玩家的一條生命值,
+把一個 ``||info: change life by [-1]||`` 積木接進空的 **else** 子句中。
 <br/>
 
 ```ghost
@@ -539,9 +534,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Finish
-🔥 Fantastic 🔥
+## 結語
+🔥 太棒了 🔥
 
-The basic enemies tutorial is complete!  
-Try defeating the level as is, then open the tilemap editor 
-and see what happens if you add more spawn points.
+基本敵人教學完成囉!
+試著挑戰目前的關卡看看,然後開啟圖塊地圖編輯器,
+看看加入更多生成點之後會發生什麼事。

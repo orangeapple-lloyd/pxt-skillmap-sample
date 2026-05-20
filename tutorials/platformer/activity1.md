@@ -1,4 +1,4 @@
-# Simple Platformer
+# 簡易平台跳躍遊戲
 
 
 
@@ -37,7 +37,7 @@
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMjAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
+        "data": "MTAxZTAwMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA0MDAwMDAwMDAwMDAwMDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDEwMDAwMDEwMDAwMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDEwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMjIwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIwMjAwMDAwMjAwMDAyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "myTiles.tile1",
@@ -59,38 +59,35 @@ scene.setBackgroundColor(11)
 tiles.setTilemap(tilemap`level`)
 ```
 
-## Welcome @unplugged
+## 歡迎 @unplugged
 
-Now let's take a look at the [__*sidescrolling*__](#scrolld "games that are viewed from the side, with most of the action happening horizontally") 
-[__*platformer*__](#plat "games that rely on jump and run as their main mechanic").  
+現在我們來認識 [__*橫向捲軸*__](#scrolld "從側面視角觀看的遊戲,大部分動作都在水平方向發生") 
+[__*平台跳躍遊戲*__](#plat "以跳躍和奔跑作為主要玩法的遊戲")。  
 
-This kind of game peeks in on the action from the side, using "jump" and "run"
-as the main mechanic.  
+這類遊戲是從側面視角觀看,以「跳躍」和「奔跑」作為主要玩法。  
 
-By the time you finish this set of tutorials, you should know all you need 
-to make a fun and engaging arcade game worth sharing.
+完成這一系列教學之後,你就會掌握所有需要的技巧,做出一款有趣、值得分享的 Arcade 遊戲。
 
-![Our first platformer](/static/skillmaps/platformer/platformer1.gif "Look what we're about to learn today!")
+![我們的第一個平台跳躍遊戲](/static/skillmaps/platformer/platformer1.gif "看看我們今天要學什麼!")
 
 
-## Create the player
+## 建立玩家角色
 
-The first thing any good platformer needs is a main character. 🐒
+任何一款好的平台跳躍遊戲第一個需要的,就是一個主角。 🐒
 
-In Arcade, our characters are [__*sprites*__](#sprote "2-D images that move on the screen").  
-We'll want to create our main sprite and get it moving before we do anything else. 
+在 Arcade 中,我們的主角是 [__*角色*__](#sprote "在螢幕上移動的 2D 圖像")。  
+在做其他事情之前,我們要先建立主角並讓它動起來。 
 <hr>
 
-🔲 From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
-block to the end of the ``||loops:on start||`` container.
+🔲 從 ``||sprites:Sprites||`` 分類中,把 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 
+積木拖到 ``||loops:on start||`` 容器的最後面。
 
-🔲 Click on the grey box in the middle of your
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
- to open the sprite editor.  From there, you can switch over to "Gallery"
- and choose a pre-drawn character.
+🔲 點擊 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` 積木中間的灰色方框,
+ 打開角色編輯器。在編輯器中,你可以切換到「Gallery」
+ 分頁,挑一個畫好的角色。
 <hr/>
->>*Tip: Don't like any of the predrawn characters? Stay in the "Editor"
-and create one of your own*!
+>>*小提示: 不喜歡內建的角色嗎? 留在「Editor」
+分頁,自己畫一個吧*!
 
 
 ```blocks
@@ -117,19 +114,19 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 ```
 
-## Move the player
+## 移動玩家角色
 
-🢀 Now we need to get the player moving 🢂
+🢀 接下來我們要讓玩家動起來 🢂
 <hr/>
 
-🔲 Drag a ``||controller:move [mySprite] with buttons ⊕||`` block.   
-to the end of the ``||loops:on start||`` container
+🔲 把 ``||controller:move [mySprite] with buttons ⊕||`` 積木 
+拖到 ``||loops:on start||`` 容器的最後面。
 
-🔲 Press the ⊕ button on the new block and change the [__*vy*__](#whatVY "vertical velocity") 
-argument to **0** so that the player won't move up or down with the joypad.
+🔲 點擊新積木上的 ⊕ 按鈕,把 [__*vy*__](#whatVY "垂直方向的速度") 
+參數改成 **0**,讓玩家在搖桿操作時不會上下移動。
 
 <hr/>
-**Now you're ready to give your game a try in the simulator!**
+**現在你可以在模擬器中試玩你的遊戲了!**
 <br/>
 
 ```blocks
@@ -157,18 +154,18 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 ```
 
-## Add gravity
+## 加上重力
 
-To make the game feel more realistic, let's add some gravity.
+為了讓遊戲感覺更真實,我們來加入一點重力。
 
-To accomplish that, we can add [__*acceleration*__](#accel "increased speed in a direction") to "pull down" on our sprite.
+要做到這件事,我們可以加上 [__*加速度*__](#accel "在某個方向上速度的增加量),把角色「往下拉」。
 <hr/>
-🔲 Drag a ``||sprites:set [mySprite] [x] to [0]||`` block to the end of 
-the ``||loops:on start||`` container.
+🔲 把 ``||sprites:set [mySprite] [x] to [0]||`` 積木拖到 
+``||loops:on start||`` 容器的最後面。
 
-🔲 Click the dropdown to change **x** to **ay (acceleration y)** 
+🔲 點擊下拉選單,把 **x** 改成 **ay (acceleration y)**。
 
-🔲 Replace **0** with **500**.
+🔲 把 **0** 換成 **500**。
 <br/>
 
 
@@ -199,22 +196,22 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 500
 ```
 
-## Jump Pt. 1
+## 跳躍 第 1 部分
 
-Now that the player is on the ground, we can make them jump!
+既然玩家已經落在地上,我們就可以讓它跳起來了!
 
-Let's attach a jumping action to the 🅐 button.
+接著,我們把跳躍的動作綁到 🅐 按鈕上。
 <hr/>
 
-🔲 Start by dragging an ``||controller:on [A] button [pressed]||`` block into the workspace.
+🔲 先把 ``||controller:on [A] button [pressed]||`` 積木拖到工作區。
 
-🔲 Inside of that, add ``||sprites:set [mySprite] [x] to [0]||`` . 
+🔲 在它裡面加上 ``||sprites:set [mySprite] [x] to [0]||``。 
 
-🔲 To choose the attribute for the player's [__*vertical velocity*__](#whatVelY "speed in the up/down direction"),
-click the dropdown menu and change **x** to **vy (velocity y)**.
+🔲 要選玩家 [__*垂直速度*__](#whatVelY "上下方向的速度") 這個屬性,
+請點擊下拉選單,把 **x** 改成 **vy (velocity y)**。
 
-🔲 The player will jump upward if you change **0** to something smaller.
-Try  **-150** or **-200**.  
+🔲 把 **0** 改成更小的負數,玩家就會往上跳。
+試試看 **-150** 或 **-200**。  
 <br/>
 
 
@@ -247,8 +244,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Done
+## 完成
 
-🔥 **That's it! We've created a simple platformer game.** 🔥  
+🔥 **就是這樣! 我們做出一款簡易的平台跳躍遊戲了。** 🔥  
 
-In the next lesson we'll learn how to add obstacles and goals.
+下一課我們會學習怎麼加入障礙物和目標。

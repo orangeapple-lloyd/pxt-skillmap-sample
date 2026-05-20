@@ -1,50 +1,37 @@
-# Adding Fuel
+# 加入燃料系統
 
-## Introduction @unplugged
+## 簡介 @unplugged
 
-Time to refuel! 
+該補充燃料囉!
 
-In this tutorial we'll add a fuel bar to your spaceship
-that depleats as you travel. 
+在這份教學中,我們會幫你的太空船加上一條燃料計量表,當你飛行時燃料會逐漸減少。
 
-Make sure to catch the powerups to keep your
-ship from breaking down!
+記得要去接補給道具,讓你的太空船不會半路拋錨!
 
-![Fuel Up!](/static/skillmaps/space/eat-gas.gif "Is it raining...tacos?")
+![燃料補給!](/static/skillmaps/space/eat-gas.gif "下的是...塔可雨嗎?")
 
 
-## Step 1
-😵 The starter code is taking up a lot of room! 
-Don't worry, the Arcade workspace will expand for you. Just scroll up and
-over (or down and over) to keep building.
+## 步驟 1
+😵 起始的程式碼已經佔了不少空間! 別擔心,Arcade 的工作區會自動延伸。只要往上、往旁邊捲動 (或往下、往旁邊) 就能繼續組裝積木。
 <hr/>
 
-🔲 Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
-Drag one to the end of the ``||loops:on start||`` container.
+🔲 看看新的 ``||statusbars:Status Bars||`` 類別。 你會找到 ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``。 把它拖到 ``||loops:on start||`` 容器的最後面。
 
-🔲 To keep track of how much *gas* is left, set the argument for 
-**statusbar** kind to **Energy**.
+🔲 為了追蹤還剩下多少 *燃料*,把 **statusbar** 的 kind 參數改成 **Energy**。
 <hr/>
->> *Tip: The ``||statusbars:Status Bars||`` category is an 
-[__extension__](#extendo "a category that provides extended capabilites to MakeCode"). 
-To see what else you can do using extensions, open a game in your gallery,
-click ``||statusbars:˅ Advanced||`` and choose ``||extension:Extensions||``*
+>> *小提示: ``||statusbars:Status Bars||`` 類別是一個 [__擴充套件__](#extendo "提供 MakeCode 延伸功能的類別")。 想看看還能用哪些擴充套件,從你的圖庫打開一個遊戲, 點選 ``||statusbars:˅ Advanced||`` 然後選擇 ``||extension:Extensions||``*
 
 ```block
 let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 ```
 
-## Step 2
-If we want the status bar to show the details of **mySprite**, we'll need to link the two together.
+## 步驟 2
+如果我們希望這條計量表顯示 **mySprite** 的狀態,就要把這兩個東西連結起來。
 <hr/>
 
-🔲 Drop ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 
-into the end of the ``||loops:on start||`` container.
+🔲 把 ``||statusbars:attach [statusbar] to [mySprite] ⊕||`` 拖到 ``||loops:on start||`` 容器的最後面。
 
-🔲 Click **⊕** on the new block to reveal options
- to change the position of the status bar in relation to **mySprite**. 
- Can you figure out how to get the bar to show up *below* your ship?
+🔲 點擊新積木上的 **⊕** 來展開選項, 可以調整計量表相對於 **mySprite** 的位置。 你能找到方法把計量表顯示在太空船 *下方* 嗎?
 
 <br/>
 
@@ -54,22 +41,19 @@ let statusbar = statusbars.create(20, 4, StatusBarKind.Energy)
 statusbar.attachToSprite(mySprite, -25, 0)
 ```
 
-## Step 3
-⏰ The longer you're in the air, the more fuel you use ⏰  
+## 步驟 3
+⏰ 在空中飛得越久,消耗的燃料就越多 ⏰  
 
-Here's how to make the fuel go down as time passes. 
+接下來教你怎麼讓燃料隨著時間流逝慢慢減少。
 <hr/>
-🔲 Drag an ``||game:on game update every [500] ms||`` container into the 
-workspace. Adjust the time argument to **300 ms**.
+🔲 拖一個 ``||game:on game update every [500] ms||`` 容器到工作區。 把時間參數調整成 **300 ms**。
 
-🔲 Drop a ``||statusbars:change [statusbar] [value] by [0]||``
-block into the **game update** container.
+🔲 把 ``||statusbars:change [statusbar] [value] by [0]||`` 積木放進 **game update** 容器裡。
 
-🔲 Change the amount the status bar changes from **0** to **-1**. 
+🔲 把計量表變化量從 **0** 改成 **-1**。
 <hr/>
 
->> *Tip: Remember this step later. If the fuel runs out too fast in 
-gameplay, you can come back and adjust these blocks.*
+>> *小提示: 把這個步驟記在心裡。如果之後玩遊戲時發現燃料消耗得太快, 你可以回來調整這些積木。*
 
 
 ```blocks
@@ -79,30 +63,22 @@ game.onUpdateInterval(300, function () {
 })
 ```
 
-## Step 4
-⛽ Time to refuel ⛽
+## 步驟 4
+⛽ 補充燃料時間 ⛽
 
-You can drop gas canisters, energy crystals, or juicy hamburgers...whatever 
-makes sense for the vessel you have.
+你可以掉落汽油桶、能量水晶,或是多汁的漢堡...只要符合你太空船的設定就好。
 
-The code for dropping fuel is a lot like the code for dropping enemies. 
-For a refresher on how things work, find the **myEnemy** blocks in the
-workspace and use them as a guide.
+掉落燃料的程式碼跟掉落敵人的程式碼很像。 如果忘記怎麼做了,在工作區裡找出 **myEnemy** 的積木參考一下。
 <hr/>
-🔲 Drag a _new_  ``||game:on game update every [500] ms||`` container 
-into the workspace and change the interval to **5 seconds (5000 ms)**.
+🔲 拖一個 _新的_ ``||game:on game update every [500] ms||`` 容器 到工作區,把間隔時間改成 **5 秒 (5000 ms)**。
 
-🔲 Snap a
-``||variables:set [projectile2] to||`` ``||sprites:projectile [ ] from side with vx [50] vy [50]||``
-block inside the newest **on game update** container.
+🔲 把 ``||variables:set [projectile2] to||`` ``||sprites:projectile [ ] from side with vx [50] vy [50]||`` 積木接在最新的 **on game update** 容器裡。
 
-🔲 Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
+🔲 點擊 ``||variables:[projectile2]||`` 把角色名稱改成 ``||variables:[myFuel]||``。
 
-🔲 Click on the grey square to bring up the sprite editor so you can
-draw a fuel sprite (or choose one from the gallery.) 
+🔲 點擊那個灰色方塊打開角色編輯器, 畫出燃料角色 (或從圖庫挑一個)。
 
-🔲 Play with the **vx** and **vy** arguments of the fuel until it's falling
-straight down at a decent speed.
+🔲 調整燃料的 **vx** 和 **vy** 參數,直到它能以適當的速度直直往下掉。
 
 <br/>
 
@@ -129,25 +105,17 @@ game.onUpdateInterval(5000, function () {
         `, 0, 50)
 })
 ```
-## Step 5
+## 步驟 5
 
-Just like with the enemies, we'll want the fuel to drop from a random position
-across the top of the screen. 
+就像敵人一樣,我們希望燃料從畫面上方的隨機位置掉下來。
 <hr/>
-🔲 Connect a ``||sprites:set [mySprite] [x] to [0]||`` block at the 
-bottom of the ``||game:on game update every [5000] ms||`` container.  
+🔲 把一個 ``||sprites:set [mySprite] [x] to [0]||`` 積木接在 ``||game:on game update every [5000] ms||`` 容器的最下面。
 
-🔲 To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+🔲 為了確認我們是在對正確的角色操作,點開新積木上的下拉選單, 把 ``||variables:mySprite||`` 改成 ``||variables:myFuel||``。
 
-🔲 To set a random [__*x*__](#setX "horizontal location") 
-for the fuel, grab a 
-``||Math:pick random [0] to [10]||`` block
-and connect it to replace the **0** argument in the 
-``||sprites:set [mySprite] [x] to [0]||`` block.
+🔲 為了讓燃料的 [__*x*__](#setX "水平位置") 是隨機的, 拿一個 ``||Math:pick random [0] to [10]||`` 積木, 把它接到 ``||sprites:set [mySprite] [x] to [0]||`` 積木裡取代 **0** 參數。
 
-🔲 Update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+🔲 把 ``||Math:pick random [0] to [10]||`` 積木的最小參數改成 **5**, 最大參數改成 **155**。
 <hr/>
 
 ```blocks
@@ -179,17 +147,15 @@ game.onUpdateInterval(5000, function () {
 })
 ```
 
-## Step 6
+## 步驟 6
 
-Now we need to put our **myFuel** sprite into the _gas_ class.
+現在我們要把 **myFuel** 角色歸類到 _gas_ 這個類別。
 <hr/>
-🔲 Snap a ``||variables:set [mySprite] kind to [Player]||`` block 
-into the bottom of the newest **on game update** container.
+🔲 把一個 ``||variables:set [mySprite] kind to [Player]||`` 積木 接在最新的 **on game update** 容器最下面。
 
-🔲 Change ``||variables:mySprite||`` to ``||variables:myFuel||``. 
+🔲 把 ``||variables:mySprite||`` 改成 ``||variables:myFuel||``。
 
-🔲 Click ``||sprites:Player||`` to get the menu, then choose
-``||sprites:Add a new kind...||`` and create the type **Gas**.  
+🔲 點擊 ``||sprites:Player||`` 打開選單,然後選 ``||sprites:Add a new kind...||`` 並建立 **Gas** 這個類型。
 <br/>
 
 ```blocks
@@ -223,23 +189,19 @@ game.onUpdateInterval(5000, function () {
 ```
 
 
-## Step 7
-When your ship overlaps fuel, you'll want the gas to disappear as the tank refills.
+## 步驟 7
+當你的太空船跟燃料重疊時,我們希望燃料消失,同時油箱也補滿。
 <hr/>  
 
-🔲 Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
+🔲 拖一個 ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 容器到工作區。
 
-🔲 Change the last argument from ``||sprites:Player||`` to ``||sprites:Gas||``.  
+🔲 把最後一個參數從 ``||sprites:Player||`` 改成 ``||sprites:Gas||``。
 
-🔲 To refill the status bar after grabbing fuel, snag a ``||statusbars:set [statusbar] [value] to [0]||`` block 
-and snap it in to your newest **overlaps** container.  Change the value from **0** to **100**.
+🔲 為了在抓到燃料後補滿計量表,抓一個 ``||statusbars:set [statusbar] [value] to [0]||`` 積木 接到最新的 **overlaps** 容器裡。把數值從 **0** 改成 **100**。
 
-🔲 Finally, make sure the used fuel disappears by snapping a ``||sprites:destroy [mySprite] ⊕||`` block 
-into the bottom of the same **overlaps** container and replacing
-``||variables:mySprite||`` with ``||variables:otherSprite||``
+🔲 最後,要讓被使用掉的燃料消失,把一個 ``||sprites:destroy [mySprite] ⊕||`` 積木 接到同一個 **overlaps** 容器的最下面,並把 ``||variables:mySprite||`` 改成 ``||variables:otherSprite||``
 
-![Grabbing variable from block](/static/skillmaps/space/give-var.gif "So that's how you do that!")
+![從積木抓取變數](/static/skillmaps/space/give-var.gif "原來是這樣做的!")
 
 <br/>
 
@@ -256,26 +218,21 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 ```
 
-## Step 9
-🌌 If you run out of fuel, you'll be marooned in space! 🌌
+## 步驟 9
+🌌 如果燃料用完了,你就會被困在太空中! 🌌
 
-The threat is real.
+威脅可是很真實的喔。
 <hr/>
-🔲 To add consequences for an empty status bar, drag a 
-``||statusbars:on status bar kind [Health] zero [status]||`` 
-container into the workspace.
+🔲 為了讓計量表歸零時有相應的後果,拖一個 ``||statusbars:on status bar kind [Health] zero [status]||`` 容器到工作區。
 
-🔲 Change the status bar kind to **Energy**. 
+🔲 把計量表的 kind 改成 **Energy**。
 
-🔲 Snap a ``||game:game over <LOSE>||`` block inside as the ultimate fate.
+🔲 把一個 ``||game:game over <LOSE>||`` 積木接進去當作最終的結局。
 
 <hr/>
-And that's it!  You should have a fully functioning game that you can save to your project
-gallery and share with friends!
+這樣就完成了! 你應該已經有一個完整可運作的遊戲,可以存到你的專案圖庫並分享給朋友!
 
-BUT...you don't have to stop there.  Once your game is in your gallery, you can
-experiment with all of the blocks in your toolbox and find many other
-exciting and special ways to customize your adventure.
+但是...你不用就此打住。一旦你的遊戲進入圖庫之後,你可以盡情實驗工具箱裡的所有積木,發掘更多刺激又特別的方式來打造屬於你的冒險。
 <br/>
 
 ```blocks

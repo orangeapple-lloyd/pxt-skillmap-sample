@@ -1,5 +1,5 @@
 
-# Tiles and Camera
+# 圖塊與攝影機
 
 
 ```jres
@@ -87,21 +87,21 @@ tiles.setTilemap(tilemap`level`)
 ## Start @unplugged
 
 
-In this tutorial, we'll create a way to win or lose our platformer game.
+在這份教學中,我們要為平台跳躍遊戲加入勝利與失敗的判定方式。
 
-![Editing our platformer](/static/skillmaps/platformer/platformer2.gif "Time to live dangerously!")
+![編輯我們的平台跳躍遊戲](/static/skillmaps/platformer/platformer2.gif "來點刺激的冒險吧!")
 
 
-## Camera
+## 攝影機
 
-Take a moment to move the player sprite around in the simulator.  
+花點時間在模擬器中移動玩家角色。
 
-Right now, the camera isn't following when the player moves off screen.  
-We can fix that!
+你會發現,當玩家移出畫面時,攝影機並沒有跟著移動。
+我們來解決這個問題!
 <hr/>
 
-🔲 Drag ``||scene:camera follow sprite [mySprite]||`` into the bottom 
-of the ``||loops:on start||`` container.
+🔲 把 ``||scene:camera follow sprite [mySprite]||`` 拖到
+``||loops:on start||`` 容器的底部。
 <br/>
 
 ```blocks
@@ -132,26 +132,26 @@ tiles.setTilemap(tilemap`level`)
 scene.cameraFollowSprite(mySprite)
 ```
 
-## Start Tile 
+## 起始圖塊
 
-🎥 Now we can move around and the camera will follow 🎥  
+🎥 現在我們可以四處移動,攝影機也會跟著走 🎥
 
-Unfortunately, our player is starting in dangerous position!
+不過很可惜,我們的玩家一開始就出現在危險的位置!
 
-By default, all sprites spawn in the middle of the screen.
-Let's change the game so your player starts somewhere safe.
+預設情況下,所有角色都會在畫面正中央出現。
+我們來修改遊戲,讓玩家從安全的地方開始。
 <hr/>
 
-🔲 Snap a ``||scene:place [mySprite] on top of random [ ]||`` block 
-into the bottom of the ``||loops:on start||`` container.
+🔲 把 ``||scene:place [mySprite] on top of random [ ]||`` 積木
+接到 ``||loops:on start||`` 容器的底部。
 
-🔲 Click the checkerboard tile and replace it with the green flag.
+🔲 點擊棋盤格圖塊,把它換成綠色旗子。
 <hr/>
-**Now your sprite starts on the green flag tile!**  
+**現在你的角色會從綠色旗子圖塊上開始!**
 
->> *Tip: If you want your sprite to start somewhere else, 
-you can move the green flag by editing the
-[__tilemap__](#tilemp "a grid of square tiles that makes up our background").
+>> *小提示:如果你想讓角色從別的地方開始,
+你可以編輯
+[__圖塊地圖__](#tilemp "由方形圖塊組成的格狀背景"),把綠色旗子移到其他位置。
 
 ```blocks
 let mySprite: Sprite = null
@@ -182,19 +182,19 @@ scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, myTiles.tile3)
 ```
 
-## Game Over Pt. 1
+## 遊戲結束 Pt. 1
 
-💀 Time to add some *danger* to this game 💀  
+💀 該為這款遊戲加入一些 *危險* 了 💀
 
-When the player overlaps the skull tile, we'll trigger a "GAME OVER".
+當玩家與骷髏頭圖塊重疊時,我們要觸發「GAME OVER」。
 <hr/>
 
-🔲 Drag the ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` container 
-into the workspace.
+🔲 把 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 容器
+拖到工作區中。
 
-🔲 Click the checkerboard image and change it to the skull tile.
+🔲 點擊棋盤格圖示,把它改成骷髏頭圖塊。
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container.
+🔲 把 ``||game:game over <LOSE>||`` 積木接到新的容器中。
 <br/>
 
 ```blocks
@@ -203,18 +203,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 })
 ```
 
-## You Win Pt. 1
+## 勝利 Pt. 1
 
-🎈 We have a way to lose, let's add a way to win 🎈  
+🎈 我們已經有讓玩家輸的方式了,現在來加入勝利的方式 🎈
 <hr/>
 
-🔲 Drag another ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` 
-container into the workspace.
+🔲 再拖一個 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+容器到工作區中。
 
-🔲 This time, change the checkerboard to the trophy tile.
+🔲 這次,把棋盤格改成獎盃圖塊。
 
-🔲 Snap a ``||game:game over <LOSE>||`` block into the new container and toggle 
-the &lt;LOSE&gt; switch to &lt;WIN&gt;!
+🔲 把 ``||game:game over <LOSE>||`` 積木接到新的容器中,並且把 &lt;LOSE&gt;
+切換成 &lt;WIN&gt;!
 <br/>
 
 ```blocks
@@ -223,15 +223,14 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location
 })
 ```
 
-## Finished
+## 完成
 
-**That's it!**
+**就是這樣!**
 
-Now we have a simple platformer that has a way to win and a way to lose.
+現在我們有一款簡單的平台跳躍遊戲,具備了勝利與失敗的判定方式。
 
-If you like, open the [__tilemap__](#tilemp "a grid of square tiles that makes up our background") 
-editor and design your own level. 
-<hr/> 
+如果你想要,可以打開 [__圖塊地圖__](#tilemp "由方形圖塊組成的格狀背景")
+編輯器,設計屬於你自己的關卡。
+<hr/>
 
->> *Tip: Make sure you use the wall tool to mark anything you don't want your sprites
-to travel through!*
+>> *小提示:記得使用牆壁工具,把你不希望角色穿越的位置標記起來!*

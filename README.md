@@ -1,70 +1,56 @@
-# MakeCode Skill Map Sample
+# MakeCode 技能地圖範例
 
-This is an example skill map that contains three separate learning paths.You can view the content here:
+這是一份範例技能地圖,包含三條獨立的學習路徑。你可以在這裡瀏覽內容:
 https://arcade.makecode.com/skillmap#github:orangeapple-lloyd/pxt-skillmap-sample/skillmap.md
 
-Github-hosted skill maps are loaded in the same manner as tutorials, with a URL fragment
-formatted as follows:
+託管在 GitHub 上的技能地圖,載入方式與一般教學相同,使用以下格式的 URL 片段:
 
-`#github:[organization name]/[repository name]/[markdown file name]`
+`#github:[組織名稱]/[儲存庫名稱]/[markdown 檔名]`
 
-## Syntax
+## 語法
 
-The skill map definition can be found in the `skillmap.md` file. Metadata about the skill
-map itself can be found under the top-level heading:
+技能地圖的定義位於 `skillmap.md` 檔案中。技能地圖本身的中繼資料(metadata)寫在最上層的標題下方:
 
-- `id`: The string after the heading (eg `# sample`). Cannot contain spaces.
-- `name`: The title of your skill map. This will be displayed in the banner on the page.
-- `description`: A description of the map contents. This is also shown in the banner.
-- `infoUrl` (optional): A URL to a page with additional educator information
+- `id`:標題後方的字串(例如 `# sample`)。不可包含空白。
+- `name`:技能地圖的標題,會顯示在頁面上的橫幅中。
+- `description`:技能地圖內容的描述,也會顯示在橫幅中。
+- `infoUrl`(選填):指向教師端額外資訊頁面的網址。
 
-### Learning Paths
+### 學習路徑(Learning Paths)
 
-A skill map consists of one or more "paths", each path being an ordered sequence of activities.
-The first activity in each path is unlocked, and completing an activity unlocks the next one.
+一份技能地圖由一或多條「路徑」組成,每條路徑都是一連串依序排列的活動。每條路徑中的第一個活動會預設解鎖,完成後會自動解鎖下一個活動。
 
-A learning path is defined by a level two heading (`##`) has has the following properties:
+學習路徑以二級標題(`##`)定義,具有下列屬性:
 
-- `id`: The string after the heading (eg `## interface`). Must be unique within this skill map.
-- `name`: The title of the path, displayed above the linked activities.
-- `description`: Additional details (not currently displayed).
-- `completionUrl`: URL to a certificate, displayed when a user has completed the entire path.
+- `id`:標題後方的字串(例如 `## interface`)。必須在這份技能地圖中唯一。
+- `name`:路徑的標題,顯示在所連結活動的上方。
+- `description`:額外的說明文字(目前不會顯示)。
+- `completionUrl`:完成整條路徑時顯示的證書 URL。
 
-### Activities
+### 活動(Activities)
 
-Each learning path has multiple activities, defined by level three headings (`###`). Currently,
-an "activity" is simply a MakeCode tutorial, and has the following properties:
+每條學習路徑有多個活動,以三級標題(`###`)定義。目前「活動」就是一份 MakeCode 教學,具有下列屬性:
 
-- `id`: The string after the heading (eg `### space-activity1`). Must be unique within this skill map.
-- `name`: The title of the activity. Displayed on the activity card.
-- `type`: The type of activity. Must be `tutorial` currently.
-- `description`: Details about the activity, displayed on the back of the card.
-- `tags`: Descriptive tags displayed on the bottom of the activity card.
-- `url`: Link to the tutorial. See the [MakeCode Tutorial Documentation](https://makecode.com/writing-docs/user-tutorials) for details on tutorial authoring and link formatting.
-- `imageUrl`: URL for the image displayed on the front of the activity card.
+- `id`:標題後方的字串(例如 `### space-activity1`)。必須在這份技能地圖中唯一。
+- `name`:活動的標題,顯示在活動卡片上。
+- `type`:活動類型。目前必須是 `tutorial`。
+- `description`:活動的詳細說明,顯示在卡片背面。
+- `tags`:活動卡片底部顯示的描述性標籤。
+- `url`:教學的連結。教學撰寫與連結格式的細節,請見 [MakeCode 教學文件](https://makecode.com/writing-docs/user-tutorials)。
+- `imageUrl`:活動卡片正面顯示的圖片 URL。
 
-## Forking
+## Fork 自己用
 
-If you fork this repo, be sure to change all URL references to https://github.com/orangeapple-lloyd/pxt-skillmap-sample to your forked repo's URL. Otherwise you won't see your changes.
+如果你 fork 了這個 repo,請務必把所有指向 https://github.com/orangeapple-lloyd/pxt-skillmap-sample 的 URL 改成你自己 fork 後的 repo 網址,否則你的修改不會生效。
 
-## Contributing
+## 貢獻
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+本專案歡迎貢獻與建議。多數貢獻需要你同意 Contributor License Agreement(CLA),宣告你有權利並確實授予我們使用你貢獻內容的權利。詳情請見 https://cla.opensource.microsoft.com 。
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+當你提交 pull request 時,CLA 機器人會自動判斷你是否需要提供 CLA,並會在 PR 上加註相對應的狀態(例如狀態檢查、留言)。依照機器人提供的指示操作即可。在所有使用此 CLA 的 repo 中,你只需要做一次。
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+本專案採用 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。更多資訊請見 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 或聯絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
 
-## Trademarks
+## 商標
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+本專案可能包含專案、產品或服務的商標或 logo。Microsoft 商標或 logo 的授權使用須遵循 [Microsoft 商標與品牌規範](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general)。在修改版本中使用 Microsoft 商標或 logo 不得引起混淆或暗示獲得 Microsoft 贊助。任何第三方商標或 logo 的使用須遵循該第三方的政策。

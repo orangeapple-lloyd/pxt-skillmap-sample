@@ -1,4 +1,4 @@
-# Enemy AI
+# 敵人 AI
 
 ```jres
 {
@@ -71,7 +71,7 @@
 
 
 
-
+ 
 
 ```template
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
@@ -160,43 +160,40 @@ startNextLevel()
 
 ## Start @unplugged
 
-Did you feel like the enemies in your last game were a little...well...stupid?
+是不是覺得上一個遊戲裡的敵人有點⋯⋯嗯⋯⋯笨笨的?
 
-In this lesson we'll learn how to make enemies smarter, using simple [_**AI**_](#fakeSmart "artificial intelligence").
+在這節課裡,我們會學習如何用簡單的 [_**AI**_](#fakeSmart "人工智慧") 讓敵人變得更聰明。
 
-![Levels and Functions](/static/skillmaps/platformer/platformer5.gif "And now for something completely different!  And a little bit the same.")
+![關卡與函式](/static/skillmaps/platformer/platformer5.gif "來點全新的東西!也有一點和以前一樣的部分。")
 
 
 
-## AI Rules @unplugged
+## AI 規則 @unplugged
 
-The code for this program spawns enemies from the purple **[ ! ]** tiles.
-Once the enemies spawn, they immediately start moving to the left and get 
-stuck on a wall...so, let's add logic to prevent the enemies from getting stopped.
+這個專案的程式碼會從紫色的 **[ ! ]** 圖塊產生敵人。
+敵人一出現就會立刻往左移動,然後被牆壁卡住⋯⋯所以我們要加入邏輯,避免敵人被擋下來。
 <hr/>
-**The enemies will need to follow two rules:**
+**敵人需要遵守兩條規則:**
 
-1. **If the enemy is about to run into a wall, it will try to jump over it**  
-2. **If the enemy does hit a wall, it will turn around**
+1. **如果敵人快要撞到牆,就會嘗試跳過去**  
+2. **如果敵人真的撞到牆,就會轉身**
 
-<hr/>
-
-Each of these rules has a *condition* and an *action*.  
-
-If the condition is met, the action will happen.
-We'll need to write code to constantly check fore each of these conditions.
-
-## Looping pt. 1
-
-To get started, we'll need an **on game update** container to trigger code 
-every time something in the game changes. Inside, we'll need a loop to check on 
-each of the enemies, one-by-one.   
 <hr/>
 
-🔲 Drag out an ``||game:on game update||`` block and place it on the workspace.
+這兩條規則都有一個 *條件* 和一個 *動作*。  
 
-🔲 Snap a ``||loops: for element [value] of [list]||`` block into the 
-**on game update** container.
+當條件成立時,就會執行對應的動作。
+我們需要寫程式持續檢查這兩個條件是否成立。
+
+## 迴圈 pt. 1
+
+首先,我們需要一個 **on game update** 容器,每當遊戲中有東西改變時就會觸發程式碼。在容器內,我們會用一個迴圈來逐一檢查每個敵人。
+<hr/>
+
+🔲 拖出一個 ``||game:on game update||`` 積木,放到工作區。
+
+🔲 把一個 ``||loops: for element [value] of [list]||`` 積木扣進
+**on game update** 容器裡。
 
 ```blocks
 let list: number[] = [];
@@ -206,19 +203,19 @@ game.onUpdate(function () {
 })
 ```
 
-## Looping pt. 2
+## 迴圈 pt. 2
 
-On each update, we want our loop to check on every enemy in the game.
-To do this, we'll use the same method as in previous tutorials.
+每次更新時,我們希望迴圈去檢查遊戲中的每一個敵人。
+要做到這件事,我們會用和前面教學一樣的方法。
 <hr/>
 
-🔲 From the ``||sprites:Sprites||`` category, grab the ``||sprites:array of sprites of kind||`` 
-block from inside the **set sprite list to** block.
+🔲 從 ``||sprites:Sprites||`` 分類中,從 **set sprite list to** 積木裡面抓出
+``||sprites:array of sprites of kind||`` 積木。
 
 
-🔲 Drop it into the **for element** loop to replace the ``||variables: list||`` variable.
+🔲 把它放進 **for element** 迴圈裡,取代 ``||variables: list||`` 變數。
 
-🔲 Change the "kind" dropdown to **Enemy**.  
+🔲 把「kind」下拉選單改成 **Enemy**。  
 <br/>
 
 ```blocks
@@ -228,24 +225,22 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 1
+## 跳躍 pt. 1
 
-Let's start the code for our first rule:
+讓我們開始寫第一條規則的程式碼:
 
-> 1. **If the enemy is about to run into a wall, it will try to jump over it**  
+> 1. **如果敵人快要撞到牆,就會嘗試跳過去**  
 <hr/>
 
-🔲 We're going to need to check **if** something is true. To do that, drag
-an ``||logic: if <true> then||`` logic container into the empty **on game update** container.
+🔲 我們需要檢查 **if**(如果) 某件事是真的。要做到這件事,把
+一個 ``||logic: if <true> then||`` 邏輯容器拖進空的 **on game update** 容器裡。
 
-🔲 Now make sure the enemy isn't already jumping by replacing 
-``||logic: <true>||`` with ``||scene: is [mySprite] hitting wall [left]||`` in the empty
-**if/then** header.  
+🔲 接著要確認敵人沒有正在跳躍,把空的 **if/then** 標頭裡的
+``||logic: <true>||`` 替換成 ``||scene: is [mySprite] hitting wall [left]||``。
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure 
-it's checking the current enemy.
+🔲 把 ``||variables: mySprite||`` 換成 ``||variables: value||``,確保檢查的是目前這個敵人。
 
-🔲 Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
+🔲 把 **left** 改成 **bottom**,檢查角色的底部是不是踩在地上。
 
 
 ```blocks
@@ -258,30 +253,27 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 2
+## 跳躍 pt. 2
 
-Now that we know the enemy is on the ground, we will have two conditions 
-when it needs to jump.  
- - If it's moving to the left and there's a wall to the left
- - If it's moving to the right and there's a wall to the right 
+現在我們知道敵人在地上了,接下來有兩種情況需要讓它跳起來。
+ - 如果它往左移動,而且左邊有牆
+ - 如果它往右移動,而且右邊有牆
 
-We'll figure out whether either situation is happening using a new **if/then** statement.
+我們會用一個新的 **if/then** 來判斷其中哪一種情況發生。
 <hr/>
 
-🔲 Drag out another ``||logic:if <true> then||`` block and place it inside of the 
-empty one already in the **for element** loop.
+🔲 拖出另一個 ``||logic:if <true> then||`` 積木,把它放進 **for element** 迴圈裡
+那個已經存在、還是空的 **if/then** 裡面。
 
-🔲 To check whether two things are true at the same time (moving left **and** wall to the left), 
-pull a ``||logic: < > and < >||`` in to replace the ``||logic:<true>||`` argument 
-in the new **if/else** statement.
+🔲 要同時檢查兩件事是不是都成立(往左移動 **而且** 左邊有牆),
+拉一個 ``||logic: < > and < >||`` 來取代新的 **if/else** 裡的 ``||logic:<true>||`` 參數。
 
-🔲 In the right blank (to the right of the **=**) snap a ``||scene: tile to the [left] of [mySprite] is [ ]||``
+🔲 在右邊的空格(也就是 **=** 右邊)扣上一個 ``||scene: tile to the [left] of [mySprite] is [ ]||``。
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace the blank
-tile with the **[X]**. 
+🔲 把 ``||variables: mySprite||`` 換成 ``||variables: value||``,並把空白圖塊換成 **[X]**。
 
-🔲 Pop a ``||logic: [0] [<] [0]||`` block to the left of the **=**.   
-We'll do more with that in the next step.  
+🔲 在 **=** 的左邊塞進一個 ``||logic: [0] [<] [0]||`` 積木。
+下一步我們會繼續處理它。  
 
 <br/>
 
@@ -295,22 +287,21 @@ game.onUpdate(function () {
 })
 ```
 
-## Jumping pt. 3
+## 跳躍 pt. 3
 
-We're already checking to see if the next tile to the left is a wall,
-but that only matters if the enemy is traveling left.  
+我們已經會檢查左邊下一個圖塊是不是牆了,
+但這件事只有在敵人往左移動時才有意義。
 
-Let's add the code to see if the enemy is moving left.
+接下來來加上判斷敵人有沒有往左移動的程式碼。
 <hr/>
-In the Arcade system, left is negative and right is positive. To check that the
-sprite is moving left, you must make sure its velocity in the x direction
-is negative.  
+在 Arcade 系統裡,左邊是負的,右邊是正的。要確認角色
+正在往左移動,就要確認它在 x 方向的速度
+是負值。
 
-🔲 Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the 
-first **0** in ``||logic: [0] [<] [0]||``.
+🔲 抓一個 ``||sprites: [mySprite] [x]||`` 參數積木,取代 ``||logic: [0] [<] [0]||`` 裡的第一個 **0**。
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
-**x** with **vx (velocity x)**.   
+🔲 把 ``||variables: mySprite||`` 換成 ``||variables: value||``,然後把
+**x** 改成 **vx (velocity x)**。   
 <br/>
 
 
@@ -326,18 +317,18 @@ game.onUpdate(function () {
 ```
 
 
-## Jumping pt. 6
+## 跳躍 pt. 6
 
-If the computer gets to this point in the code, it means it's time for the
-enemy to jump. 
+如果電腦執行到這一行,就代表
+是讓敵人跳起來的時候了。
 <hr/>
 
-🔲 Inside the newly built **if/else** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
+🔲 在剛剛建立好的 **if/else** 裡面,接上一個 ``||sprites:set [mySprite] [x] to [0]||`` 積木。
 
-🔲 Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace 
-``||sprites: x||`` with ``||sprites: vy (velocity y)||``. 
+🔲 把 ``||variables: mySprite||`` 換成 ``||variables: value||``,然後把
+``||sprites: x||`` 換成 ``||sprites: vy (velocity y)||``。
 
-🔲 Change **0** to **-150**.  
+🔲 把 **0** 改成 **-150**。  
 <br/>
 
 ```blocks
@@ -352,24 +343,23 @@ game.onUpdate(function () {
 ```
 
 
-## Jumping pt. 7
+## 跳躍 pt. 7
 
-Next, we'll add the code to do the same thing to the right.
+接著,我們要在右邊也加上類似的程式碼。
 <hr/>
 
-🔲 Click twice on the **⊕** button at the bottom of the innermost **if/else**
-statement that we've just completed, to add an **else** then an **else if** clause.
+🔲 在剛剛完成的最內層 **if/else** 底部,點兩次 **⊕** 按鈕,
+先新增一個 **else**,再新增一個 **else if** 子句。
 
-🔲 Duplicate the entire **and** statement, then drop the duplicate into the
-header of the **else if** clause.  
+🔲 把整個 **and** 條件複製一份,然後把複製的這份放進 **else if** 子句的標頭。
 
-🔲 In the new clause, change **<** to **>** and **left** to **right**.
+🔲 在新的子句裡,把 **<** 改成 **>**,把 **left** 改成 **right**。
 
-🔲 Duplicate the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` block 
-and snap the copy inside the empty **else if** statement.
+🔲 複製 ``||sprites:set [value] [vy (velocity y)] to [-150]||`` 積木,
+把複製的這份扣進空的 **else if** 裡面。
 
-🔲 We're done with this **if/else if** statement now, so you can click the 
-**⊖** beside the **else** clause to remove it from the block.
+🔲 這個 **if/else if** 已經處理完了,你可以點 **else** 子句旁邊的
+**⊖** 按鈕,把它從積木上移除。
 
 <br/>
 
@@ -388,26 +378,26 @@ game.onUpdate(function () {
 ```
 
 
-## Wall bouncing pt. 1
+## 撞牆反彈 pt. 1
 
-We've completed the code for rule #1, now let's take a look at rule #2.
+我們已經完成規則 #1 的程式碼,現在來看規則 #2。
 
-> 2. **If the enemy does hit a wall, it will turn around**
+> 2. **如果敵人真的撞到牆,就會轉身**
 
 <hr/>
-The case for an enemy not running into a wall while traveling on the ground has been handled.
-Next, we need to add cases for when an enemy runs into a wall on the left or right
-while it's already trying to jump.
+敵人在地上行走且沒有撞牆的情況已經處理好了。
+接下來要加上敵人已經在跳躍時、左邊或右邊撞到牆
+的情況。
 
-🔲 Click three times on the **⊕** button at the bottom of the outermost **if/else**
-statement (**if <is value hitting wall bottom> then**) to add an **else** and two **else if** clauses.
+🔲 在最外層 **if/else**(**if <is value hitting wall bottom> then**)的底部,
+點三次 **⊕** 按鈕,新增一個 **else** 和兩個 **else if** 子句。
 
-🔲 Duplicate the ``||scene: is [value] hitting wall [bottom]||`` argument twice and 
-place a copy in each of the new **else if** headers.
+🔲 把 ``||scene: is [value] hitting wall [bottom]||`` 參數複製兩份,
+分別放進兩個新的 **else if** 標頭裡。
 
-🔲 Change **bottom** to **left** in the first **else if**.
+🔲 在第一個 **else if** 裡把 **bottom** 改成 **left**。
 
-🔲 Change **bottom** to **right** in the second **else if**.  
+🔲 在第二個 **else if** 裡把 **bottom** 改成 **right**。  
 <br/>
 
 ```blocks
@@ -428,22 +418,20 @@ game.onUpdate(function () {
 })
 ```
 
-## Wall bouncing pt. 2
+## 撞牆反彈 pt. 2
 
-Finally, we need to add the code to make the enemies turn right if they were
-going left and left if they were going right.
+最後,我們要加上程式碼讓敵人在原本往左走時改成往右,
+原本往右走時改成往左。
 <hr/>
 
-🔲 Make two duplicates of one of the ``||sprites:set [value] [vy (velocity y)] to [-150]||`` blocks from the original **if/then**
-clause and snap one into each of the empty **else if** clauses.
+🔲 把原本 **if/then** 子句裡的 ``||sprites:set [value] [vy (velocity y)] to [-150]||`` 積木複製兩份,
+分別扣進兩個空的 **else if** 子句裡。
 
-🔲 For the **set value** block inside the first **else if** clause 
-(**else if <is value hitting wall left> then**), change 
-**vy (velocity y)** to **vx (velocity x)** and change **-150** to **30**.
+🔲 在第一個 **else if** 子句(**else if <is value hitting wall left> then**)
+的 **set value** 積木裡,把 **vy (velocity y)** 改成 **vx (velocity x)**,把 **-150** 改成 **30**。
 
-🔲 For the **set value** block inside the second **else if** clause 
-(**else if <is value hitting wall right> then**), change 
-**vy (velocity y)** to **vx (velocity x)** and change **-150** to **-30**.
+🔲 在第二個 **else if** 子句(**else if <is value hitting wall right> then**)
+的 **set value** 積木裡,把 **vy (velocity y)** 改成 **vx (velocity x)**,把 **-150** 改成 **-30**。
 
 
 ```blocks
@@ -467,12 +455,10 @@ game.onUpdate(function () {
 
 ## Finish
 
-🎊 Congratulations 🎊
+🎊 恭喜你 🎊
 
-You've created an arcade game with levels, interactive tilemaps, and 
-intelligent enemies! Now make sure to play through it, then share with friends.
+你已經做出一款有多個關卡、互動圖塊地圖,還有聰明敵人的 Arcade 遊戲了!記得自己玩一遍,然後分享給朋友。
 
-Arcade has many options that haven't been explored here.  If you have time,
-you should click out to the main Arcade page and play with our full editor
-to make a game all of your own!
-
+Arcade 還有許多功能我們在這裡沒有介紹到。如果你還有時間,
+可以點到 Arcade 主頁,用完整的編輯器自由玩玩看,
+做出一款完全屬於你自己的遊戲!

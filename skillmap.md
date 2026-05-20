@@ -1,33 +1,33 @@
 # sample
-* name: Game Maker Guide
-* description: Level up your game making skills by completing the tutorials in this guide.
+* name: 遊戲製作指南
+* description: 透過完成本指南中的教學，提升你的遊戲製作能力。
 
 ## interface
-* name: Learn to use MakeCode Arcade
-* description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
+* name: 學會使用 MakeCode Arcade
+* description: 本路徑會教你如何在 Microsoft MakeCode Arcade 中完成教學。
 * completionUrl: https://orangeapple-lloyd.github.io/pxt-skillmap-sample/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
-* name: Learn to use MakeCode Arcade
+* name: 學會使用 MakeCode Arcade
 * type: tutorial
-* description: Intro to our tutorial cards
-* tags: easy
+* description: 認識教學卡片的功能介紹
+* tags: 入門
 
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/interface/activity1 
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/interface/activity1.png
 
 ## space
-* name: Design a Space Explorer
-* description: Let's explore the depths of space! We'll design a vessel for space travel, add some enemies, and populate the universe with planets.
+* name: 設計太空探險家
+* description: 一起探索浩瀚宇宙！我們會設計一艘太空船、加入敵人，並讓星系裡布滿星球。
 * completionUrl: https://orangeapple-lloyd.github.io/pxt-skillmap-sample/certificates/design-a-space-explorer.pdf
 
 ### space-activity1
 
-* name: Ship Design
+* name: 太空船設計
 * type: tutorial
-* description: Draw and code a spaceship!
-* tags: easy
+* description: 畫一艘太空船並寫程式控制它！
+* tags: 入門
 * next: space-activity2
 
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/space/activity1
@@ -35,10 +35,10 @@
 
 ### space-activity2
 
-* name: Projectiles
+* name: 發射子彈
 * type: tutorial
-* description: Customize your ship with projectiles and effects.
-* tags: easy, projectiles, kinds
+* description: 為你的太空船加上子彈與特效。
+* tags: 入門, 子彈, kinds
 * next: space-activity3
 
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/space/activity2
@@ -46,10 +46,10 @@
 
 ### space-activity3
 
-* name: Enemies
-* description: Watch out for danger! Add enemies and lives to your game.
+* name: 敵人來襲
+* description: 小心危險！為你的遊戲加入敵人與生命值。
 * type: tutorial
-* tags: easy, enemies, kinds
+* tags: 入門, 敵人, kinds
 * next: space-activity4
 
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/space/activity3
@@ -57,10 +57,10 @@
 
 ### space-activity4
 
-* name: Fuel Up
+* name: 添加燃料
 * type: tutorial
-* description: Use an extension to add a fuel gauge to your ship. Make sure to refuel often!
-* tags: intermediate, extensions
+* description: 使用擴充套件為你的太空船加上燃料表。記得常常補充燃料喔！
+* tags: 中階, 擴充套件
 
 
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/space/activity4
@@ -69,55 +69,55 @@
 
 
 ## platformer
-* name: Learn to Make a Platformer
-* description: A skillmap that takes you through how to build a platformer with multiple levels.
+* name: 學做平台跳躍遊戲
+* description: 帶你從零開始打造一款有多個關卡的平台跳躍遊戲。
 * completionUrl: https://orangeapple-lloyd.github.io/pxt-skillmap-sample/certificates/learn-to-make-a-platformer.pdf
 
 ### platformer-activity1
 
-* name: Simple Platformer
+* name: 基礎平台遊戲
 * type: tutorial
-* description: Learn how to make a player character that can jump and move around a tilemap.
+* description: 學會讓玩家角色能在圖塊地圖上移動與跳躍。
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/platformer/activity1
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/platformer/activity1.png
-* tags: easy
+* tags: 入門
 * next: platformer-activity2
 
 ### platformer-activity2
 
-* name: Camera and Tiles
+* name: 攝影機與圖塊
 * type: tutorial
-* description: Learn how to use the camera and add tile overlap events to give the player a way to win and lose.
+* description: 學會使用攝影機並加入圖塊重疊事件，讓玩家有方法獲勝或失敗。
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/platformer/activity2
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/platformer/activity2.png
-* tags: easy, tiles
+* tags: 入門, 圖塊
 * next: platformer-activity3
 
 ### platformer-activity3
 
-* name: Simple Enemies
+* name: 簡單敵人
 * type: tutorial
-* description: Learn how to add enemies to your game that follow the player.
+* description: 學會在遊戲中加入會追逐玩家的敵人。
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/platformer/activity3
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/platformer/activity3.png
-* tags: intermediate, overlaps
+* tags: 中階, 重疊事件
 * next: platformer-activity4
 
 ### platformer-activity4
 
-* name: Multiple Levels
+* name: 多個關卡
 * type: tutorial
-* description: Add a second level to your platformer using functions.
+* description: 使用函式為平台遊戲新增第二個關卡。
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/platformer/activity4
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/platformer/activity4.png
-* tags: intermediate, functions
+* tags: 中階, 函式
 * next: platformer-activity5
 
 ### platformer-activity5
 
-* name: Enemy AI
+* name: 敵人 AI
 * type: tutorial
-* description: Add physics and AI to the enemies in your game.
+* description: 為遊戲中的敵人加上物理與 AI 行為。
 * url: https://github.com/orangeapple-lloyd/pxt-skillmap-sample/tutorials/platformer/activity5
 * imageUrl: https://raw.githubusercontent.com/orangeapple-lloyd/pxt-skillmap-sample/main/img/platformer/activity5.png
-* tags: intermediate, AI, physics
+* tags: 中階, AI, 物理

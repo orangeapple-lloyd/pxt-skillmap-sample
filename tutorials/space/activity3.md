@@ -1,4 +1,4 @@
-# Adding Danger
+# 加入危險元素
 
 ### @autoexpandOff true
 
@@ -63,28 +63,28 @@ scene.cameraShake(4, 500)
 
 
 
-## Introduction @unplugged
+## 簡介 @unplugged
 
-**Intergalactic travel is dangerous!**
+**星際旅行充滿危險!**
 
-Let's add some enemies for your ship to avoid.  
-These could be asteroids, radioactive debris, or angry space sharks!
+讓我們加入一些敵人,讓你的太空船閃避吧。
+這些敵人可以是小行星、輻射廢料,或是憤怒的太空鯊魚!
 
-![Releasing projectiles](/static/skillmap/space/projectiles.gif "Here, enemy ship. Would you like to borrow an asteroid?")
+![發射子彈](/static/skillmap/space/projectiles.gif "嘿,敵方太空船,要不要借一顆小行星?")
 
 
-## Step 1
+## 步驟 1
 
-**👾 Feel like making enemies rain from the sky? 👾**
+**👾 想讓敵人從天而降嗎? 👾**
 
-Let's add some code that will drop an enemy toward the ship every second or so.
+我們來加入一段程式,讓敵人每隔一秒左右就掉向太空船。
 
 ---
- 
-🔲 Add an ``||game:on game update every [500] ms||`` container to the workspace  
 
-🔲 Change the last argument to **1000** [__*ms*__](#millis "milliseconds...aka 1/1000 of a second") 
-(or pick **1 second** from the dropdown)    
+🔲 把 ``||game:on game update every [500] ms||`` 容器加進工作區
+
+🔲 把最後一個參數改成 **1000** [__*毫秒*__](#millis "milliseconds...也就是 1/1000 秒")
+(或從下拉選單選 **1 second**)
 <br/>
 
 ```blocks
@@ -92,16 +92,16 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 2
+## 步驟 2
 
-🔲 In the ``||sprites:Sprites||`` category, find the
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
-and drag it into the new **on game update** container.
+🔲 在 ``||sprites:Sprites||`` 分類裡找到
+``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` 積木,
+把它拖到剛剛新增的 **on game update** 容器裡。
 
-🔲 Click on the ``||variables:[projectile2]||`` value inside the new block and 
-select "Rename variable..."  
+🔲 點擊新積木裡的 ``||variables:[projectile2]||`` 變數,
+選擇「Rename variable...」
 
-🔲 Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.  
+🔲 把變數名稱改成 ``||variables:myEnemy||``,這樣我們就知道這些是壞蛋了。
 <br/>
 ```blocks
 let myEnemy: Sprite = null
@@ -128,16 +128,16 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 3
-**🎆 Let's get the enemies moving in the right direction 🎆**
+## 步驟 3
+**🎆 讓敵人朝正確方向移動 🎆**
 
 ---
 
-🔲 Click the grey square inside the new block to design your enemy  
-(or choose one from the gallery).  
+🔲 點擊新積木裡的灰色方塊,自己設計一個敵人
+(或從圖庫中選一個現成的)。
 
-🔲 Play with the **vx** and **vy** values of **myEnemy** until 
-your new sprites are falling straight down the side of the screen. 
+🔲 調整 **myEnemy** 的 **vx** 和 **vy** 數值,直到你的新角色
+會從畫面側邊直直掉下來為止。
 
 
 ```blocks
@@ -165,34 +165,34 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 4
+## 步驟 4
 
 
-Enemies aren't likely to hit the ship if they're all the way off to the side, 
-so let's add an element of surprise using [__*random numbers*__](#randos "numbers appearing seemingly without a predictable pattern") .
-
----
-
-
-🔲 Snap a ``||sprites:set [mySprite] [x] to [0]||`` block into the 
-end of the **on game update** container.  
-
-🔲 To make sure we're acting on the right sprites, use the dropdown in the 
-new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
-
-🔲 Set a random [__*x*__](#setX "horizontal location") 
-for the enemies using a
-``||Math:pick random [0] to [10]||`` block from the ``||Math:Math||`` category.
-Connect it to replace the **0** in the  **set mySprite x** block.
-
-🔲 Finally, update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
-maximum argument to **155**. 
+如果敵人全部都從畫面邊邊出現,大概都不會撞到太空船,
+所以我們用 [__*亂數*__](#randos "看起來毫無規律的數字") 加入一些驚喜感。
 
 ---
 
-**Tip:** The Arcade screen is 160px wide, 
-so you could make your enemies fall anywhere between 0 and 160 
-and still be able to see a piece of them.
+
+🔲 把 ``||sprites:set [mySprite] [x] to [0]||`` 積木接到
+**on game update** 容器的最後面。
+
+🔲 為了確保我們處理到對的角色,用新積木裡的下拉選單把
+``||variables:mySprite||`` 改成 ``||variables:myEnemy||``。
+
+🔲 替敵人設定隨機的 [__*x*__](#setX "水平位置"),
+從 ``||Math:Math||`` 分類拿出
+``||Math:pick random [0] to [10]||`` 積木,
+把它塞進 **set mySprite x** 積木中取代原本的 **0**。
+
+🔲 最後把 ``||Math:pick random [0] to [10]||`` 積木的最小值參數改成 **5**,
+最大值參數改成 **155**。
+
+---
+
+**小提示:** Arcade 的畫面寬度是 160 像素,
+所以你可以讓敵人從 0 到 160 之間任何位置掉下來,
+都還能看到牠們的一部分身影。
 
 ```blocks
 let myEnemy: Sprite = null
@@ -222,19 +222,19 @@ game.onUpdateInterval(1000, function () {
 ```
 
 
-## Step 5
+## 步驟 5
 
-You might want to add lots of different kinds of enemies plummeting from above.
-We can make sure they all have the same effect using the 
-"**Enemy**" [__*class*__](#withClass "a label you give a particular group so you can refer to it later").
+你可能會想加入各式各樣從天而降的敵人。
+我們可以用 "**Enemy**" [__*類別*__](#withClass "你給某一群事物取的標籤,方便之後拿來指稱") 
+確保所有敵人都有相同的效果。
 
 ---
 
-🔲 Snap a ``||sprites:set [mySprite] kind to [Player]||`` block into the bottom of the 
-**on game update** container. 
+🔲 把 ``||sprites:set [mySprite] kind to [Player]||`` 積木接到
+**on game update** 容器的最下方。
 
-🔲 Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose 
- ``||sprites:Enemy||`` as the kind.  
+🔲 將 ``||variables:mySprite||`` 改成 ``||variables:myEnemy||``,然後選
+ ``||sprites:Enemy||`` 作為類別。
  <br/>
 
 
@@ -268,27 +268,26 @@ game.onUpdateInterval(1000, function () {
 
 
 
-## Step 6
+## 步驟 6
 
 
-**💥 Time to create some enemy behavior 💥**
+**💥 該來設計敵人的行為了 💥**
 
-To add excitement to the game, let's make something happen when an enemy
-collides with our ship. 
-
----
-
-
-🔲 Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace. 
-
-🔲 Change the last argument from ``||variables:Player||`` to ``||variables:Enemy||``.
+為了讓遊戲更刺激,讓我們在敵人撞到太空船時做點什麼事。
 
 ---
 
-**Tip:** Don't try to change "sprite" → "mySprite" or "otherSprite" → "myEnemy".
-The "sprite" and "otherSprite" arguments here describe two general kinds of sprites on the screen
-(not the specific creations we gave names to earlier.) 
+
+🔲 把 ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+容器拖到工作區。
+
+🔲 把最後一個參數從 ``||variables:Player||`` 改成 ``||variables:Enemy||``。
+
+---
+
+**小提示:** 不要把 "sprite" 改成 "mySprite",也不要把 "otherSprite" 改成 "myEnemy"。
+這裡的 "sprite" 和 "otherSprite" 參數代表畫面上兩類角色
+(不是我們之前命名的特定角色)。
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -296,30 +295,30 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 7
+## 步驟 7
 
-When the enemy collides with the ship, 
-we want it to subtract a life...then disappear. 
-
----
-
-
-🔲 Grab the ``||info:change life by [-1]||`` block from the ``||info:Info||`` category and snap it into the 
-**on player overlaps enemy** container. 
-That removes a life from the player every time it's hit by an enemy.
-
-🔲 Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block. 
-
-🔲 To tell the **destroy** block that you want it to affect the overlapping enemy, 
-click on the ``||variables:otherSprite||`` variable from the top of the 
-**overlaps** container and drag it down to replace the 
-``||variables:mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
-![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
+當敵人撞到太空船時,
+我們希望先扣掉一條生命值⋯⋯然後讓敵人消失。
 
 ---
 
-**Tip:** Click the __⊕__ on the ``||sprites:destroy [otherSprite] ⊕||`` block to get
-a menu of effects to display upon your enemy's demise!
+
+🔲 從 ``||info:Info||`` 分類拿出 ``||info:change life by [-1]||`` 積木,接進
+**on player overlaps enemy** 容器裡。
+這樣玩家每次被敵人撞到就會扣一條生命值。
+
+🔲 找到 ``||sprites:destroy [mySprite] ⊕||`` 積木,接在上一個積木下方。
+
+🔲 為了告訴 **destroy** 積木要消滅的是發生重疊的敵人,
+從 **overlaps** 容器最上面點擊 ``||variables:otherSprite||`` 變數,
+把它拖下來取代 ``||sprites:destroy [mySprite] ⊕||`` 裡的
+``||variables:mySprite||`` 參數。
+![從積木上抓取變數](/static/skillmap/space/give-var.gif "原來可以這樣做!")
+
+---
+
+**小提示:** 點擊 ``||sprites:destroy [otherSprite] ⊕||`` 積木上的 __⊕__,
+可以打開特效選單,讓敵人在被消滅時呈現各種效果!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -328,30 +327,30 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## Step 8
+## 步驟 8
 
-**🌍 Time to save the world 🌏**
+**🌍 該來拯救世界了 🌏**
 
-Another **overlap** container will help our projectiles
-destroy our enemies on impact.
-
----
-
-
-🔲 Drag another ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
-container into the workspace.
-
-🔲 Change the first kind to ``||sprites:Enemy||`` and the second kind to
-``||sprites:Projectile||``. 
-
-🔲 Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
-so that one destroys the enemy (``||variables:sprite||``) and the other 
-destroys your projectile (``||variables:otherSprite||``).
+再加一個 **overlap** 容器,
+就能讓子彈在擊中敵人時把對方消滅。
 
 ---
 
-**Tip:** Don't forget to hit that __⊕__ button on the **destroy** block to get
-some spectacular effects when your projectile makes contact!
+
+🔲 再拖一個 ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||`` 
+容器到工作區。
+
+🔲 把第一個類別改成 ``||sprites:Enemy||``,第二個類別改成
+``||sprites:Projectile||``。
+
+🔲 在容器裡加入兩個 ``||sprites:destroy [mySprite] ⊕||`` 積木,然後調整參數,
+讓其中一個消滅敵人 (``||variables:sprite||``),另一個
+消滅你的子彈 (``||variables:otherSprite||``)。
+
+---
+
+**小提示:** 別忘了按下 **destroy** 積木上的 __⊕__ 按鈕,
+讓子彈擊中目標時噴出酷炫的特效!
 
 ```blocks
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -360,12 +359,12 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 })
 ```
 
-## Complete 
+## 結語
 
-**Congratulations**
+**恭喜你**
 
-Now you have a full barrage of enemies to combat!  
-Don't forget to try your game in the simulator before you click "Finish".
+現在你有一整批的敵人可以對戰了!
+記得在按下「Finish」之前,先在模擬器上試玩看看你的遊戲。
 
-Once you have it like you want it, click the finish button get back to 
-the skillmap where you can share with family and friends!
+調整到滿意之後,點擊完成按鈕回到技能地圖,
+就可以把作品分享給家人和朋友囉!

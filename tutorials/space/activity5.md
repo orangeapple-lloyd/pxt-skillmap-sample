@@ -1,16 +1,12 @@
-# Adding Encounters
+# 加入太空中的相遇
 
-## Introduction @unplugged
+## 簡介 @unplugged
 
-Your universe is pretty empty right now. Let's add some things for your ship
-to find! These could be planets or asteroids or space debris left over from
-other ships. Or maybe you encounter other travelers, or alien rockets!
+你的宇宙現在還相當空蕩。讓我們加入一些東西,讓你的太空船在旅途中可以遇見!可能是行星、小行星,或是其他太空船留下的太空殘骸,也或許你會遇到其他旅人,甚至外星人的火箭!
 
-## Add an array
+## 加入陣列
 
-First, click on the **Advanced** item in the toolbox. From ``||arrays:Arrays||``,
- drag out the ``||variables:set list to||`` block and add it to
- ``||loops:on start||``.
+首先,點擊工具箱中的 **Advanced**。從 ``||arrays:Arrays||`` 中,拖出 ``||variables:set list to||`` 積木,接到 ``||loops:on start||`` 裡面。
 
 ```blocks
 effects.starField.startScreenEffect()
@@ -38,11 +34,9 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 let list = [1, 2, 3]
 ```
 
-## Draw some planets
+## 畫一些行星
 
-Next, go under **Advanced** again and from ``||images:Images||``, drag out the
-gray image square. Put one in each slot of the array, then click on the gray
-square to draw your space objects.
+接下來,再次打開 **Advanced**,從 ``||images:Images||`` 中拖出灰色的圖片方框。在陣列的每個位置都放上一個,然後點擊灰色方框畫出你的太空物件。
 
 ```blocks
 effects.starField.startScreenEffect()
@@ -122,20 +116,18 @@ let list = [img`
 ```
 
 
-## Add game update
+## 加入遊戲更新
 
-Now we need to actually add these planets to the game! Add an ``||game:on game
-update every||`` block to the workspace and change the interval to **2000**.
+現在我們真的要把這些行星加進遊戲了!把 ``||game:on game update every||`` 積木放到工作區,並把間隔改成 **2000**。
 
 ```blocks
 game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Spawn planets
+## 生成行星
 
-From ``||sprites:Sprites||`` drag ``||variables:projectile from side||`` into
-the ``||game:on game update every||``. Set the ``||sprites:vx||`` value to `0`.
+從 ``||sprites:Sprites||`` 中拖出 ``||variables:projectile from side||``,放進 ``||game:on game update every||`` 裡面。把 ``||sprites:vx||`` 的值設為 `0`。
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -143,12 +135,9 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Set planet image
+## 設定行星圖片
 
-You already drew your planets, so we need to grab the images from your array.
-Find the ``||arrays:get value at||`` in ``||arrays:Arrays||`` and drag it over
-the gray image square in your ``||variables:projectile from side||`` block.
-Click the hint to check that your code looks correct!
+你剛剛已經畫好了行星,所以我們要從陣列中抓出這些圖片。在 ``||arrays:Arrays||`` 中找到 ``||arrays:get value at||``,把它拖到 ``||variables:projectile from side||`` 積木裡的灰色圖片方框上。點擊提示確認你的程式是否正確!
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -156,12 +145,8 @@ game.onUpdateInterval(2000, function () {
 })
 ```
 
-## Set planet position
-Place a ``||sprites:set position to||`` block right below the
-``||variables:set projectile to||`` ``||sprites:projectile||`` block. Change
-the variable to ``||variables:projectile||`` in the dropdown list. You should
-see a row of planets (or asteroids, or alien ships) going down the left side
-of your game.
+## 設定行星位置
+在 ``||variables:set projectile to||`` ``||sprites:projectile||`` 積木的正下方放上 ``||sprites:set position to||`` 積木。在下拉選單中把變數改成 ``||variables:projectile||``。你應該會看到一排行星(或是小行星、外星太空船)從遊戲畫面的左側往下走。
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -169,17 +154,13 @@ game.onUpdateInterval(2000, function () {
     projectile.x = 0
 })
 ```
-## Add randomness
+## 加入隨機性
 
-Let's make things a little more exciting!
+讓畫面再刺激一點!
 
-Drag out  **two** ``||math:pick random 0 to 10||`` blocks. Put the first one
-inside the ``||arrays:get value at||`` and change the second number to **2**.
-This is the **number of planets in your list, minus one**.
+拖出 **兩個** ``||math:pick random 0 to 10||`` 積木。把第一個放進 ``||arrays:get value at||`` 裡面,並把第二個數字改成 **2**。這是 **你清單中的行星數量減一**。
 
-Put the second one inside ``||sprites:set position to||`` and change the
-second number to **160**, or the width of the screen. Now you've got planets
-appearing as you travel!
+把第二個放進 ``||sprites:set position to||`` 裡面,並把第二個數字改成 **160**,也就是螢幕的寬度。現在你旅行的途中就會不斷有行星出現了!
 
 ```blocks
 game.onUpdateInterval(2000, function () {
