@@ -1,7 +1,7 @@
 # MakeCode 技能地圖範例
 
 這是一份範例技能地圖,包含三條獨立的學習路徑。你可以在這裡瀏覽內容:
-https://arcade.makecode.com/skillmap#github:orangeapple-lloyd/pxt-skillmap-sample/skillmap.md
+https://arcade.makecode.com/skillmap#github:orangeapple-lloyd/pxt-skillmap-tw/skillmap.md
 
 託管在 GitHub 上的技能地圖,載入方式與一般教學相同,使用以下格式的 URL 片段:
 
@@ -41,7 +41,7 @@ https://arcade.makecode.com/skillmap#github:orangeapple-lloyd/pxt-skillmap-sampl
 
 ## Fork 自己用
 
-如果你 fork 了這個 repo,請務必把所有指向 https://github.com/orangeapple-lloyd/pxt-skillmap-sample 的 URL 改成你自己 fork 後的 repo 網址,否則你的修改不會生效。
+如果你 fork 了這個 repo,請務必把所有指向 https://github.com/orangeapple-lloyd/pxt-skillmap-tw 的 URL 改成你自己 fork 後的 repo 網址,否則你的修改不會生效。
 
 ## 貢獻
 
