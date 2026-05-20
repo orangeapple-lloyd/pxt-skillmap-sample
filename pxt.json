@@ -8,6 +8,9 @@
     "files": [
         "README.md",
         "skillmap.md",
+        "skillmap-test.md",
+        "beginner-skillmap-2.md",
+        "tutorials/test/activity1.md",
         "tutorials/interface/activity1.md",
         "tutorials/platformer/activity1.md",
         "tutorials/platformer/activity2.md",
